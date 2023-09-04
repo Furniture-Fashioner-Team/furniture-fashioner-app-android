@@ -4,7 +4,7 @@
 As a user, I want to be able to place objects in my space of living using a camera on my phone.
 
 ## Story#2
-As a user, I want to be able to resise AR -objects in my environment.
+As a user, I want to be able to resize AR -objects in my environment.
 
 ## Story#3
 As a user, I want to be able to anchor multiple objects in my environment.
