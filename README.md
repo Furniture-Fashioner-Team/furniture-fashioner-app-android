@@ -1,4 +1,4 @@
-# home-designer-app
+# home-designer-app-Android
 The main repository for files regarding the development of an AR-driven mobile app for furniture and object placement + modification.
 
 This project is going to be developed using **Unity 3D** and most of the code will be composed of **C# -scripts** to modify assets and objects in Unity's scene view. The coding convention we're using is **CamelCase**. Visual Studio Code is our recommended code editor.
