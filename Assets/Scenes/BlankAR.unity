@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1062,6 +1062,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1956769255}
   - component: {fileID: 1956769254}
+  - component: {fileID: 1956769256}
+  - component: {fileID: 1956769257}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1084,7 +1086,7 @@ MonoBehaviour:
   m_Camera: {fileID: 585385558}
   m_OriginBaseGameObject: {fileID: 1956769253}
   m_CameraFloorOffsetObject: {fileID: 2123283760}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.1176
 --- !u!4 &1956769255
 Transform:
@@ -1102,6 +1104,32 @@ Transform:
   - {fileID: 2123283761}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956769256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956769253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastPrefab: {fileID: 0}
+--- !u!114 &1956769257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956769253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319c0ba4a354a634084901085cadaf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPlace: {fileID: 2596022604027703007}
 --- !u!1 &2007277707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1330,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a191b1598a50845adfeadc66096754, type: 3}
+--- !u!1 &2596022604027703007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+    type: 3}
+  m_PrefabInstance: {fileID: 2596022604027703006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6535705679876362724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1323,13 +1357,28 @@ PrefabInstance:
     - target: {fileID: 3249910824942527020, guid: b38669ff71b6a7d429d564cba5c2faf9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6605811462976878969, guid: b38669ff71b6a7d429d564cba5c2faf9,
         type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 585385558}
+    - target: {fileID: 8177067344813915927, guid: b38669ff71b6a7d429d564cba5c2faf9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177067344813915927, guid: b38669ff71b6a7d429d564cba5c2faf9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177067344813915927, guid: b38669ff71b6a7d429d564cba5c2faf9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8177067344813915927, guid: b38669ff71b6a7d429d564cba5c2faf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1380,7 +1429,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2822383659168950263, guid: b38669ff71b6a7d429d564cba5c2faf9, type: 3}
+    - {fileID: 2276077977578196086, guid: b38669ff71b6a7d429d564cba5c2faf9, type: 3}
+    - {fileID: 8719108108385886248, guid: b38669ff71b6a7d429d564cba5c2faf9, type: 3}
+    - {fileID: 6605811462976878969, guid: b38669ff71b6a7d429d564cba5c2faf9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
