@@ -8,11 +8,11 @@ public class ObjectResizer : MonoBehaviour
     public Slider sizeSlider; // Reference to your UI Slider
     public float minSize = 0.1f;
     public float maxSize = 2.0f;
-    private Transform capsule;
+    private Transform obj;
 
     private void Start()
     {
-        capsule = transform; // Assuming the script is attached to the object you want to resize
+        obj = transform; // Assuming the script is attached to the object you want to resize
         sizeSlider.onValueChanged.AddListener(ResizeObject);
     }
 
@@ -22,6 +22,6 @@ public class ObjectResizer : MonoBehaviour
         float clampedSize = Mathf.Lerp(minSize, maxSize, newSize);
 
         // Apply the new scale to the object
-        capsule.localScale = new Vector3(clampedSize, clampedSize, clampedSize);
+        obj.localScale = new Vector3(clampedSize, clampedSize, clampedSize);
     }
 }
