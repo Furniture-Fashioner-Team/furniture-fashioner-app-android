@@ -6,7 +6,6 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
@@ -54,11 +53,6 @@ ExportedObj/
 
 # Unity3D generated file on crash reports
 sysinfo.txt
-
-# Builds
-*.aab
-*.unitypackage
-*.app
 
 # Crashlytics generated file
 crashlytics-build.properties
