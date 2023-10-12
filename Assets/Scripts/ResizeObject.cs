@@ -5,33 +5,37 @@ using UnityEngine.UI;
 
 public class ObjectResizer : MonoBehaviour
 {
-    public Slider sizeSlider; // Reference to your UI Slider
-    public float minSize = 0.1f;
-    public float maxSize = 2f;
+    public Slider sizeSlider;
+    public TMPro.TMP_Text scaleText;
+    public float minRelativeScale = 0.1f;
+    public float maxRelativeScale = 2f;
 
     private Transform objectToResize;
 
-    private float localScaleX;
-    private float localScaleY;
-    private float localScaleZ;
-
+    private Vector3 initialLocalScale;
+    
     private void Start()
     {
-        objectToResize = transform; // Assuming the script is attached to the object you want to resize
-        localScaleX = objectToResize.localScale.x;
-        localScaleY = objectToResize.localScale.y;
-        localScaleZ = objectToResize.localScale.z;
+        objectToResize = transform;
+        initialLocalScale = objectToResize.localScale;
         sizeSlider.onValueChanged.AddListener(ResizeObject);
+        UpdateScaleText(initialLocalScale);
     }
 
     private void ResizeObject(float newSize)
     {
-        // Clamp the size based on the Slider's min and max values
-        float clampedSizeX = Mathf.Lerp(localScaleX * minSize, localScaleX * maxSize, newSize);
-        float clampedSizeY = Mathf.Lerp(localScaleY * minSize, localScaleY * maxSize, newSize);
-        float clampedSizeZ = Mathf.Lerp(localScaleZ * minSize, localScaleZ * maxSize, newSize);
+        float relativeScale = Mathf.Lerp(minRelativeScale, maxRelativeScale, newSize);
+        Vector3 newLocalScale = initialLocalScale * relativeScale;
 
-        // Apply the new scale to the object
-        objectToResize.localScale = new Vector3(clampedSizeX, clampedSizeY, clampedSizeZ);
+        objectToResize.localScale = newLocalScale;
+
+        UpdateScaleText(newLocalScale);
+    }
+
+    private void UpdateScaleText(Vector3 currentLocalScale)
+    {
+        float scale = currentLocalScale.x / initialLocalScale.x;
+        
+        scaleText.text = $"Scale: {scale:F2}";
     }
 }
