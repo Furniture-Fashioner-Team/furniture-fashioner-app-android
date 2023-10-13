@@ -1,27 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjectResizer : MonoBehaviour
 {
-    public Slider sizeSlider; // Reference to your UI Slider
-    public float minSize = 0.1f;
-    public float maxSize = 2.0f;
-    private Transform obj;
+    public Slider sizeSlider;
+    private Transform tr;
+    private Vector3 origSize;
+    private float[] minMax = { 0.1f, 2.0f };
+
+    private void Awake()
+    {
+        tr = transform;
+        origSize = tr.localScale;
+    }
 
     private void Start()
     {
-        obj = transform; // Assuming the script is attached to the object you want to resize
+        sizeSlider.value = 0.5f;
         sizeSlider.onValueChanged.AddListener(ResizeObject);
     }
 
-    private void ResizeObject(float newSize)
+    public void ResizeObject(float modifier)
     {
-        // Clamp the size based on the Slider's min and max values
-        float clampedSize = Mathf.Lerp(minSize, maxSize, newSize);
-
-        // Apply the new scale to the object
-        obj.localScale = new Vector3(clampedSize, clampedSize, clampedSize);
+        tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
     }
 }
