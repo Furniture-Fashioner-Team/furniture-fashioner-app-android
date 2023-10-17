@@ -9,4 +9,4 @@ If you're interested in downloading the application on your Android device, you 
 ## Development Diary
 For Sprint 1 the plan is to have a working camera view with rudimental objects such as a cube or a triangle. The object will be selected from a menu view and the objects rendered using a camera scene.
 
-For Sprint 2 our focus has been on developing surface recognition and identification 
+For Sprint 2 our focus has been on developing surface recognition and identification + user interface modification, so that the user can select from multiple different objects.
