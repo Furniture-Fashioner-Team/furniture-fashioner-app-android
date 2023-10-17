@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Thumbnails/palli.png.meta
 guid: 8c9db5b9638096248a80ad09893901b5
+========
+guid: e3d110a819ddf5241b4e069e1aada5bb
+>>>>>>>> origin/aapon-branch:Assets/Tree_Textures/diffuse.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

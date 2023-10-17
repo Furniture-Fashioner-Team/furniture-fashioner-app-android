@@ -5,23 +5,37 @@ using UnityEngine.UI;
 
 public class ObjectResizer : MonoBehaviour
 {
-    public Slider sizeSlider; // Reference to your UI Slider
-    public float minSize = 0.1f;
-    public float maxSize = 2.0f;
-    private Transform obj;
+    public Slider sizeSlider;
+    public TMPro.TMP_Text scaleText;
+    public float minRelativeScale = 0.1f;
+    public float maxRelativeScale = 2f;
 
+    private Transform objectToResize;
+
+    private Vector3 initialLocalScale;
+    
     private void Start()
     {
-        obj = transform; // Assuming the script is attached to the object you want to resize
+        objectToResize = transform;
+        initialLocalScale = objectToResize.localScale;
         sizeSlider.onValueChanged.AddListener(ResizeObject);
+        UpdateScaleText(initialLocalScale);
     }
 
     private void ResizeObject(float newSize)
     {
-        // Clamp the size based on the Slider's min and max values
-        float clampedSize = Mathf.Lerp(minSize, maxSize, newSize);
+        float relativeScale = Mathf.Lerp(minRelativeScale, maxRelativeScale, newSize);
+        Vector3 newLocalScale = initialLocalScale * relativeScale;
 
-        // Apply the new scale to the object
-        obj.localScale = new Vector3(clampedSize, clampedSize, clampedSize);
+        objectToResize.localScale = newLocalScale;
+
+        UpdateScaleText(newLocalScale);
+    }
+
+    private void UpdateScaleText(Vector3 currentLocalScale)
+    {
+        float scale = currentLocalScale.x / initialLocalScale.x;
+        
+        scaleText.text = $"Scale: {scale:F2}";
     }
 }

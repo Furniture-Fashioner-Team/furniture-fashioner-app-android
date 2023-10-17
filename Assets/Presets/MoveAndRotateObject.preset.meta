@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Presets/MoveAndRotateObject.preset.meta
 guid: 05b4691a6565e5242b5c5fd4951d241f
+========
+guid: fee5243b4c3305f4393657b324b1a5c4
+>>>>>>>> origin/aapon-branch:Assets/Plugins/CW/LeanCommon/GUIDE.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2655988077585873504

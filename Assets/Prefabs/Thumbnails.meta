@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Prefabs/Thumbnails.meta
 guid: f601a8998122f6b44ba08f2d3e88a4fd
+========
+guid: d1203f2998d2f3d4197c605558bc3685
+>>>>>>>> origin/aapon-branch:Assets/Prefabs/MockFurniture.meta
+=======
+<<<<<<<< HEAD:Assets/Presets.meta
+guid: c99dcf651d424444aa67feab1567ef5e
+========
+guid: e55f06e14fb9e654c92ac4f61ef8b378
+>>>>>>>> origin/aapon-branch:Assets/Prefabs/Thumbnails.meta
+>>>>>>> origin/aapon-branch
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
