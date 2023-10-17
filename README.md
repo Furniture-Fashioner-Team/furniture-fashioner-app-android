@@ -3,7 +3,7 @@ The main repository for files regarding the development of an AR-driven mobile a
 
 This project is going to be developed using **Unity 3D** and most of the code will be composed of **C# -scripts** to modify assets and objects in Unity's scene view. The coding convention we're using is **CamelCase**. Visual Studio Code is our preferred code editor.
 
-We are using Unity Asset Store assets and Chat GPT for the completion of this project.
+We are utilising Unity Asset Store assets and Chat GPT for the completion of this project.
 
 ## Installation
 If you're interested in downloading the application on your Android device, you can find the latest downloadable version in the **Builds-folder.**
