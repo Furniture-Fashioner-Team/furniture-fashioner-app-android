@@ -294,7 +294,13 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2596022604027703006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &314767605
+--- !u!4 &314767613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 923792451068704076, guid: 79a191b1598a50845adfeadc66096754,
+    type: 3}
+  m_PrefabInstance: {fileID: 2596022604027703006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &314767618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,19 +309,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 314767604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f104f90ff2da543af7cc8a2ff071bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   press:
     m_Name: Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bbed3362-11f6-4fb3-b50f-d48d6a0342c9
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7258e246-81c4-452c-b04d-5a0b595d880b
+      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
       m_Path: <Touchscreen>/Press
       m_Interactions: 
       m_Processors: 
@@ -326,13 +332,13 @@ MonoBehaviour:
   screenPosition:
     m_Name: Screen Position
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0333bbf8-579f-49d8-b6ed-1cd47f6cf01b
+    m_ExpectedControlType: Vector2
+    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f0e1fa88-a262-489c-b2d6-7856d6db9c55
+      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
       m_Path: <Touchscreen>/position
       m_Interactions: 
       m_Processors: 
@@ -342,14 +348,14 @@ MonoBehaviour:
     m_Flags: 0
   doublePress:
     m_Name: Double Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d0f891c-50df-4d49-8beb-08ab66a716d7
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f696d2ec-f46c-44f0-a186-829ea938f932
+      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
       m_Path: <Touchscreen>/touch1/press
       m_Interactions: 
       m_Processors: 
@@ -360,13 +366,13 @@ MonoBehaviour:
   axis:
     m_Name: Axis
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4858c6f1-8137-41a5-bec1-ba811b211878
+    m_ExpectedControlType: Vector2
+    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 44887d81-0ca9-4441-99ae-c6eec97b0e7e
+      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
       m_Path: <Touchscreen>/delta
       m_Interactions: 
       m_Processors: 
@@ -374,12 +380,20 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
---- !u!4 &314767613 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 923792451068704076, guid: 79a191b1598a50845adfeadc66096754,
-    type: 3}
-  m_PrefabInstance: {fileID: 2596022604027703006}
+--- !u!114 &314767619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeSlider: {fileID: 2007277709}
+  scaleText: {fileID: 2087584233}
 --- !u!1 &336648582
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +811,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89bfa70cbd01a624aab72f8ce41d3982,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 506387071}
+      addedObject: {fileID: 506387073}
   m_SourcePrefab: {fileID: 100100000, guid: 89bfa70cbd01a624aab72f8ce41d3982, type: 3}
 --- !u!1 &506387058 stripped
 GameObject:
@@ -841,19 +855,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 506387058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f104f90ff2da543af7cc8a2ff071bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   press:
     m_Name: Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bbed3362-11f6-4fb3-b50f-d48d6a0342c9
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7258e246-81c4-452c-b04d-5a0b595d880b
+      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
       m_Path: <Touchscreen>/Press
       m_Interactions: 
       m_Processors: 
@@ -864,13 +878,13 @@ MonoBehaviour:
   screenPosition:
     m_Name: Screen Position
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0333bbf8-579f-49d8-b6ed-1cd47f6cf01b
+    m_ExpectedControlType: Vector2
+    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f0e1fa88-a262-489c-b2d6-7856d6db9c55
+      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
       m_Path: <Touchscreen>/position
       m_Interactions: 
       m_Processors: 
@@ -880,14 +894,14 @@ MonoBehaviour:
     m_Flags: 0
   doublePress:
     m_Name: Double Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d0f891c-50df-4d49-8beb-08ab66a716d7
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f696d2ec-f46c-44f0-a186-829ea938f932
+      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
       m_Path: <Touchscreen>/touch1/press
       m_Interactions: 
       m_Processors: 
@@ -898,13 +912,13 @@ MonoBehaviour:
   axis:
     m_Name: Axis
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4858c6f1-8137-41a5-bec1-ba811b211878
+    m_ExpectedControlType: Vector2
+    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 44887d81-0ca9-4441-99ae-c6eec97b0e7e
+      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
       m_Path: <Touchscreen>/delta
       m_Interactions: 
       m_Processors: 
@@ -912,7 +926,7 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
---- !u!114 &506387071
+--- !u!114 &506387073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -921,13 +935,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 506387058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c979bc02f97c24a9a4e376a216e79e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
-  minRelativeScale: 0.1
-  maxRelativeScale: 2
 --- !u!1 &585385552
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +984,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585385552}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
   m_Name: 
@@ -1165,12 +1177,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585385552}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0490ab11f3686e4ab0019e91262a978, type: 3}
+  m_Script: {fileID: 11500000, guid: a75ad14513ac86e498db3aafb0126961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 300
+  rotationSpeed: 100
 --- !u!1 &751653699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,7 +1696,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1159848666}
+      addedObject: {fileID: 1159848672}
   m_SourcePrefab: {fileID: 100100000, guid: 6bd1c1f7916326bb6bce60a5fa86ea22, type: 3}
 --- !u!1 &1159848663 stripped
 GameObject:
@@ -1722,19 +1734,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1159848663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f104f90ff2da543af7cc8a2ff071bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   press:
     m_Name: Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bbed3362-11f6-4fb3-b50f-d48d6a0342c9
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7258e246-81c4-452c-b04d-5a0b595d880b
+      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
       m_Path: <Touchscreen>/Press
       m_Interactions: 
       m_Processors: 
@@ -1745,13 +1757,13 @@ MonoBehaviour:
   screenPosition:
     m_Name: Screen Position
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0333bbf8-579f-49d8-b6ed-1cd47f6cf01b
+    m_ExpectedControlType: Vector2
+    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f0e1fa88-a262-489c-b2d6-7856d6db9c55
+      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
       m_Path: <Touchscreen>/position
       m_Interactions: 
       m_Processors: 
@@ -1761,14 +1773,14 @@ MonoBehaviour:
     m_Flags: 0
   doublePress:
     m_Name: Double Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d0f891c-50df-4d49-8beb-08ab66a716d7
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f696d2ec-f46c-44f0-a186-829ea938f932
+      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
       m_Path: <Touchscreen>/touch1/press
       m_Interactions: 
       m_Processors: 
@@ -1779,13 +1791,13 @@ MonoBehaviour:
   axis:
     m_Name: Axis
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4858c6f1-8137-41a5-bec1-ba811b211878
+    m_ExpectedControlType: Vector2
+    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 44887d81-0ca9-4441-99ae-c6eec97b0e7e
+      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
       m_Path: <Touchscreen>/delta
       m_Interactions: 
       m_Processors: 
@@ -1793,7 +1805,13 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
---- !u!114 &1159848666
+--- !u!4 &1159848669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1159848662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159848672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1802,19 +1820,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1159848663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c979bc02f97c24a9a4e376a216e79e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
-  minRelativeScale: 0.1
-  maxRelativeScale: 2
---- !u!4 &1159848669 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
-    type: 3}
-  m_PrefabInstance: {fileID: 1159848662}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166178396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
@@ -1830,19 +1840,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166178396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f104f90ff2da543af7cc8a2ff071bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeSlider: {fileID: 2007277709}
+  scaleText: {fileID: 2087584233}
+--- !u!4 &1166178416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2028475253813895734, guid: ffba1ad1537e80f4984dd412e39ad100,
+    type: 3}
+  m_PrefabInstance: {fileID: 3884207314633763012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1166178420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166178396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   press:
     m_Name: Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bbed3362-11f6-4fb3-b50f-d48d6a0342c9
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7258e246-81c4-452c-b04d-5a0b595d880b
+      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
       m_Path: <Touchscreen>/Press
       m_Interactions: 
       m_Processors: 
@@ -1853,13 +1883,13 @@ MonoBehaviour:
   screenPosition:
     m_Name: Screen Position
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0333bbf8-579f-49d8-b6ed-1cd47f6cf01b
+    m_ExpectedControlType: Vector2
+    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f0e1fa88-a262-489c-b2d6-7856d6db9c55
+      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
       m_Path: <Touchscreen>/position
       m_Interactions: 
       m_Processors: 
@@ -1869,14 +1899,14 @@ MonoBehaviour:
     m_Flags: 0
   doublePress:
     m_Name: Double Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d0f891c-50df-4d49-8beb-08ab66a716d7
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f696d2ec-f46c-44f0-a186-829ea938f932
+      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
       m_Path: <Touchscreen>/touch1/press
       m_Interactions: 
       m_Processors: 
@@ -1887,13 +1917,13 @@ MonoBehaviour:
   axis:
     m_Name: Axis
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4858c6f1-8137-41a5-bec1-ba811b211878
+    m_ExpectedControlType: Vector2
+    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 44887d81-0ca9-4441-99ae-c6eec97b0e7e
+      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
       m_Path: <Touchscreen>/delta
       m_Interactions: 
       m_Processors: 
@@ -1901,12 +1931,6 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
---- !u!4 &1166178416 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2028475253813895734, guid: ffba1ad1537e80f4984dd412e39ad100,
-    type: 3}
-  m_PrefabInstance: {fileID: 3884207314633763012}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276145322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,15 +2439,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1610646385}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1610646381}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1610646380}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1610646385}
+      addedObject: {fileID: 1610646388}
   m_SourcePrefab: {fileID: 100100000, guid: 59ee8cc85c331296eb04ef85f953a679, type: 3}
 --- !u!1 &1610646378 stripped
 GameObject:
@@ -2431,7 +2455,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1610646377}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1610646380
+--- !u!114 &1610646381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2440,19 +2464,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1610646378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f104f90ff2da543af7cc8a2ff071bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   press:
     m_Name: Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bbed3362-11f6-4fb3-b50f-d48d6a0342c9
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7258e246-81c4-452c-b04d-5a0b595d880b
+      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
       m_Path: <Touchscreen>/Press
       m_Interactions: 
       m_Processors: 
@@ -2463,13 +2487,13 @@ MonoBehaviour:
   screenPosition:
     m_Name: Screen Position
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0333bbf8-579f-49d8-b6ed-1cd47f6cf01b
+    m_ExpectedControlType: Vector2
+    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f0e1fa88-a262-489c-b2d6-7856d6db9c55
+      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
       m_Path: <Touchscreen>/position
       m_Interactions: 
       m_Processors: 
@@ -2479,14 +2503,14 @@ MonoBehaviour:
     m_Flags: 0
   doublePress:
     m_Name: Double Press
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d0f891c-50df-4d49-8beb-08ab66a716d7
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f696d2ec-f46c-44f0-a186-829ea938f932
+      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
       m_Path: <Touchscreen>/touch1/press
       m_Interactions: 
       m_Processors: 
@@ -2497,13 +2521,13 @@ MonoBehaviour:
   axis:
     m_Name: Axis
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4858c6f1-8137-41a5-bec1-ba811b211878
+    m_ExpectedControlType: Vector2
+    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 44887d81-0ca9-4441-99ae-c6eec97b0e7e
+      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
       m_Path: <Touchscreen>/delta
       m_Interactions: 
       m_Processors: 
@@ -2511,22 +2535,6 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
---- !u!114 &1610646381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610646378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c979bc02f97c24a9a4e376a216e79e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
-  minRelativeScale: 0.1
-  maxRelativeScale: 2
 --- !u!4 &1610646384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
@@ -2554,6 +2562,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.66666675, y: 0.22187616, z: 0.070577234}
   m_Center: {x: -0.3030303, y: -0.07088015, z: 0.025288617}
+--- !u!114 &1610646388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610646378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeSlider: {fileID: 2007277709}
+  scaleText: {fileID: 2087584233}
 --- !u!1 &1622744075
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,13 +4043,18 @@ PrefabInstance:
     - {fileID: 3165574560163605456, guid: 79a191b1598a50845adfeadc66096754, type: 3}
     - {fileID: 1400302458845539967, guid: 79a191b1598a50845adfeadc66096754, type: 3}
     - {fileID: 1523591851444999656, guid: 79a191b1598a50845adfeadc66096754, type: 3}
+    - {fileID: 6910101954911261683, guid: 79a191b1598a50845adfeadc66096754, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 314767605}
+      addedObject: {fileID: 314767618}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767619}
   m_SourcePrefab: {fileID: 100100000, guid: 79a191b1598a50845adfeadc66096754, type: 3}
 --- !u!1001 &3884207314633763012
 PrefabInstance:
@@ -4176,6 +4203,7 @@ PrefabInstance:
     - {fileID: 4345673324474726705, guid: ffba1ad1537e80f4984dd412e39ad100, type: 3}
     - {fileID: 5190089354688294954, guid: ffba1ad1537e80f4984dd412e39ad100, type: 3}
     - {fileID: 947022454104066316, guid: ffba1ad1537e80f4984dd412e39ad100, type: 3}
+    - {fileID: 5395631921787289751, guid: ffba1ad1537e80f4984dd412e39ad100, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4183,6 +4211,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1166178405}
+    - targetCorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1166178420}
   m_SourcePrefab: {fileID: 100100000, guid: ffba1ad1537e80f4984dd412e39ad100, type: 3}
 --- !u!1001 &9186136305070714926
 PrefabInstance:
