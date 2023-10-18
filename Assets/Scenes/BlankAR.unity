@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,6 +288,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &265031900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 265031901}
+  - component: {fileID: 265031902}
+  m_Layer: 0
+  m_Name: Object Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &265031901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265031900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2007277708}
+  m_Father: {fileID: 1868179900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: -850}
+  m_SizeDelta: {x: 640, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &265031902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265031900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843c443c8a6ef0342840fcecb2f0c03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 2007277709}
 --- !u!1 &314767604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
@@ -300,86 +350,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2596022604027703006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &314767618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314767604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  press:
-    m_Name: Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
-      m_Path: <Touchscreen>/Press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Press
-      m_Flags: 0
-    m_Flags: 0
-  screenPosition:
-    m_Name: Screen Position
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
-      m_Path: <Touchscreen>/position
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Screen Position
-      m_Flags: 0
-    m_Flags: 0
-  doublePress:
-    m_Name: Double Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
-      m_Path: <Touchscreen>/touch1/press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Double Press
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
-      m_Path: <Touchscreen>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
 --- !u!114 &314767619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +364,144 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
+--- !u!114 &314767623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &314767624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9681b5d2f7b2f0f4899f76004c10c657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  press:
+    m_Name: Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 5c925c1f-c24f-411b-94b2-089770e74274
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5d581089-27af-43ac-be38-50ab1047ebf1
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Press
+      m_Flags: 0
+    m_Flags: 0
+  tap:
+    m_Name: Tap
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2120fea9-0373-4054-924e-240344b3cee1
+    m_Processors: 
+    m_Interactions: Tap
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f39bab33-ea3e-4589-9727-c7ae0458c9a4
+      m_Path: <Touchscreen>/primaryTouch/tap
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tap
+      m_Flags: 0
+    m_Flags: 0
+  doublePress:
+    m_Name: Double Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: f614e4e2-c858-4085-9c74-7fcf37aad350
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: fead753a-acb5-4ba0-9efa-dd784a8a97b6
+      m_Path: <Touchscreen>/touch1/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Double Press
+      m_Flags: 0
+    m_Flags: 0
+  screenPosition:
+    m_Name: Screen Position
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: d7ef6070-1603-49af-ada0-248cf8d67416
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7e3d9a63-6102-49d9-b31e-c10e71f25361
+      m_Path: <Touchscreen>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Screen Position
+      m_Flags: 0
+    m_Flags: 0
+  axis:
+    m_Name: Axis
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: a47eb934-4f4e-47a4-9020-5e6882cf079c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44d623fa-1878-4cf4-8f40-927d77a98c49
+      m_Path: <Touchscreen>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Axis
+      m_Flags: 0
+    m_Flags: 0
+  currentScreenPosition: {x: 0, y: 0}
+  rotation: {x: 0, y: 0}
+  isDragged: 0
+  isRotated: 0
+  openMenu: 0
+--- !u!114 &314767625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773b878261c709e47bf32783356e2835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &314767626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b06df737dd7994409b4596d4386340c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &336648582
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,11 +915,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89bfa70cbd01a624aab72f8ce41d3982,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 506387070}
+      addedObject: {fileID: 506387073}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89bfa70cbd01a624aab72f8ce41d3982,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 506387073}
+      addedObject: {fileID: 506387079}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89bfa70cbd01a624aab72f8ce41d3982,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506387078}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89bfa70cbd01a624aab72f8ce41d3982,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506387077}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89bfa70cbd01a624aab72f8ce41d3982,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506387076}
   m_SourcePrefab: {fileID: 100100000, guid: 89bfa70cbd01a624aab72f8ce41d3982, type: 3}
 --- !u!1 &506387058 stripped
 GameObject:
@@ -846,86 +966,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 506387057}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &506387070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506387058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  press:
-    m_Name: Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
-      m_Path: <Touchscreen>/Press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Press
-      m_Flags: 0
-    m_Flags: 0
-  screenPosition:
-    m_Name: Screen Position
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
-      m_Path: <Touchscreen>/position
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Screen Position
-      m_Flags: 0
-    m_Flags: 0
-  doublePress:
-    m_Name: Double Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
-      m_Path: <Touchscreen>/touch1/press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Double Press
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
-      m_Path: <Touchscreen>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
 --- !u!114 &506387073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +980,144 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
+--- !u!114 &506387076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506387058}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &506387077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506387058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9681b5d2f7b2f0f4899f76004c10c657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  press:
+    m_Name: Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 5c925c1f-c24f-411b-94b2-089770e74274
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5d581089-27af-43ac-be38-50ab1047ebf1
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Press
+      m_Flags: 0
+    m_Flags: 0
+  tap:
+    m_Name: Tap
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2120fea9-0373-4054-924e-240344b3cee1
+    m_Processors: 
+    m_Interactions: Tap
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f39bab33-ea3e-4589-9727-c7ae0458c9a4
+      m_Path: <Touchscreen>/primaryTouch/tap
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tap
+      m_Flags: 0
+    m_Flags: 0
+  doublePress:
+    m_Name: Double Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: f614e4e2-c858-4085-9c74-7fcf37aad350
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: fead753a-acb5-4ba0-9efa-dd784a8a97b6
+      m_Path: <Touchscreen>/touch1/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Double Press
+      m_Flags: 0
+    m_Flags: 0
+  screenPosition:
+    m_Name: Screen Position
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: d7ef6070-1603-49af-ada0-248cf8d67416
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7e3d9a63-6102-49d9-b31e-c10e71f25361
+      m_Path: <Touchscreen>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Screen Position
+      m_Flags: 0
+    m_Flags: 0
+  axis:
+    m_Name: Axis
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: a47eb934-4f4e-47a4-9020-5e6882cf079c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44d623fa-1878-4cf4-8f40-927d77a98c49
+      m_Path: <Touchscreen>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Axis
+      m_Flags: 0
+    m_Flags: 0
+  currentScreenPosition: {x: 0, y: 0}
+  rotation: {x: 0, y: 0}
+  isDragged: 0
+  isRotated: 0
+  openMenu: 0
+--- !u!114 &506387078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506387058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773b878261c709e47bf32783356e2835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &506387079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506387058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b06df737dd7994409b4596d4386340c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &585385552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,11 +1870,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1159848665}
+      addedObject: {fileID: 1159848672}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1159848672}
+      addedObject: {fileID: 1159848678}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1159848677}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1159848676}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1159848675}
   m_SourcePrefab: {fileID: 100100000, guid: 6bd1c1f7916326bb6bce60a5fa86ea22, type: 3}
 --- !u!1 &1159848663 stripped
 GameObject:
@@ -1725,86 +1915,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.020000005, z: 0.03109054}
   m_Center: {x: 0, y: 9.773001e-17, z: -0.011156296}
---- !u!114 &1159848665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159848663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  press:
-    m_Name: Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
-      m_Path: <Touchscreen>/Press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Press
-      m_Flags: 0
-    m_Flags: 0
-  screenPosition:
-    m_Name: Screen Position
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
-      m_Path: <Touchscreen>/position
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Screen Position
-      m_Flags: 0
-    m_Flags: 0
-  doublePress:
-    m_Name: Double Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
-      m_Path: <Touchscreen>/touch1/press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Double Press
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
-      m_Path: <Touchscreen>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
 --- !u!4 &1159848669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bd1c1f7916326bb6bce60a5fa86ea22,
@@ -1825,6 +1935,144 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
+--- !u!114 &1159848675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159848663}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1159848676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159848663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9681b5d2f7b2f0f4899f76004c10c657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  press:
+    m_Name: Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 5c925c1f-c24f-411b-94b2-089770e74274
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5d581089-27af-43ac-be38-50ab1047ebf1
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Press
+      m_Flags: 0
+    m_Flags: 0
+  tap:
+    m_Name: Tap
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2120fea9-0373-4054-924e-240344b3cee1
+    m_Processors: 
+    m_Interactions: Tap
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f39bab33-ea3e-4589-9727-c7ae0458c9a4
+      m_Path: <Touchscreen>/primaryTouch/tap
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tap
+      m_Flags: 0
+    m_Flags: 0
+  doublePress:
+    m_Name: Double Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: f614e4e2-c858-4085-9c74-7fcf37aad350
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: fead753a-acb5-4ba0-9efa-dd784a8a97b6
+      m_Path: <Touchscreen>/touch1/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Double Press
+      m_Flags: 0
+    m_Flags: 0
+  screenPosition:
+    m_Name: Screen Position
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: d7ef6070-1603-49af-ada0-248cf8d67416
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7e3d9a63-6102-49d9-b31e-c10e71f25361
+      m_Path: <Touchscreen>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Screen Position
+      m_Flags: 0
+    m_Flags: 0
+  axis:
+    m_Name: Axis
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: a47eb934-4f4e-47a4-9020-5e6882cf079c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44d623fa-1878-4cf4-8f40-927d77a98c49
+      m_Path: <Touchscreen>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Axis
+      m_Flags: 0
+    m_Flags: 0
+  currentScreenPosition: {x: 0, y: 0}
+  rotation: {x: 0, y: 0}
+  isDragged: 0
+  isRotated: 0
+  openMenu: 0
+--- !u!114 &1159848677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159848663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773b878261c709e47bf32783356e2835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1159848678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159848663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b06df737dd7994409b4596d4386340c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1166178396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
@@ -1851,7 +2099,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3884207314633763012}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1166178420
+--- !u!114 &1166178424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166178396}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1166178425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1860,19 +2120,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166178396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
+  m_Script: {fileID: 11500000, guid: 9681b5d2f7b2f0f4899f76004c10c657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   press:
     m_Name: Press
     m_Type: 1
     m_ExpectedControlType: Button
-    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
+    m_Id: 5c925c1f-c24f-411b-94b2-089770e74274
     m_Processors: 
-    m_Interactions: Press
+    m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
+      m_Id: 5d581089-27af-43ac-be38-50ab1047ebf1
       m_Path: <Touchscreen>/Press
       m_Interactions: 
       m_Processors: 
@@ -1880,33 +2140,33 @@ MonoBehaviour:
       m_Action: Press
       m_Flags: 0
     m_Flags: 0
-  screenPosition:
-    m_Name: Screen Position
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
+  tap:
+    m_Name: Tap
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2120fea9-0373-4054-924e-240344b3cee1
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Tap
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
-      m_Path: <Touchscreen>/position
+      m_Id: f39bab33-ea3e-4589-9727-c7ae0458c9a4
+      m_Path: <Touchscreen>/primaryTouch/tap
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Screen Position
+      m_Action: Tap
       m_Flags: 0
     m_Flags: 0
   doublePress:
     m_Name: Double Press
     m_Type: 1
     m_ExpectedControlType: Button
-    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
+    m_Id: f614e4e2-c858-4085-9c74-7fcf37aad350
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
+      m_Id: fead753a-acb5-4ba0-9efa-dd784a8a97b6
       m_Path: <Touchscreen>/touch1/press
       m_Interactions: 
       m_Processors: 
@@ -1914,16 +2174,33 @@ MonoBehaviour:
       m_Action: Double Press
       m_Flags: 0
     m_Flags: 0
-  axis:
-    m_Name: Axis
+  screenPosition:
+    m_Name: Screen Position
     m_Type: 0
     m_ExpectedControlType: Vector2
-    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
+    m_Id: d7ef6070-1603-49af-ada0-248cf8d67416
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
+      m_Id: 7e3d9a63-6102-49d9-b31e-c10e71f25361
+      m_Path: <Touchscreen>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Screen Position
+      m_Flags: 0
+    m_Flags: 0
+  axis:
+    m_Name: Axis
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: a47eb934-4f4e-47a4-9020-5e6882cf079c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44d623fa-1878-4cf4-8f40-927d77a98c49
       m_Path: <Touchscreen>/delta
       m_Interactions: 
       m_Processors: 
@@ -1931,6 +2208,35 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
+  currentScreenPosition: {x: 0, y: 0}
+  rotation: {x: 0, y: 0}
+  isDragged: 0
+  isRotated: 0
+  openMenu: 0
+--- !u!114 &1166178426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166178396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773b878261c709e47bf32783356e2835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1166178427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166178396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b06df737dd7994409b4596d4386340c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276145322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,11 +2749,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1610646381}
+      addedObject: {fileID: 1610646388}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1610646388}
+      addedObject: {fileID: 1610646394}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610646393}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610646392}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610646391}
   m_SourcePrefab: {fileID: 100100000, guid: 59ee8cc85c331296eb04ef85f953a679, type: 3}
 --- !u!1 &1610646378 stripped
 GameObject:
@@ -2455,86 +2773,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1610646377}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1610646381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610646378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb658b5609070204081daf4737b9bb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  press:
-    m_Name: Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 9eaf2804-76aa-4a4f-a470-276947cce1bf
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 0f4e9475-9a1b-4f21-8faf-6b9bd2bd53c0
-      m_Path: <Touchscreen>/Press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Press
-      m_Flags: 0
-    m_Flags: 0
-  screenPosition:
-    m_Name: Screen Position
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 4dc0b638-8be6-4d2b-8a38-276f358491cd
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 57303551-ce58-4fb5-9328-e5bb15b874ea
-      m_Path: <Touchscreen>/position
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Screen Position
-      m_Flags: 0
-    m_Flags: 0
-  doublePress:
-    m_Name: Double Press
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: ed4473ee-f69f-4a68-938c-d3f94f16a28c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45902036-d9a2-48da-9e7a-4344a59bb0f8
-      m_Path: <Touchscreen>/touch1/press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Double Press
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 5e3aa0d9-a690-4755-932a-cf7d1fe3d25d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 45d95ca1-f89b-4df0-a023-dab34b0951d0
-      m_Path: <Touchscreen>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
 --- !u!4 &1610646384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
@@ -2576,6 +2814,144 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
+--- !u!114 &1610646391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610646378}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1610646392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610646378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9681b5d2f7b2f0f4899f76004c10c657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  press:
+    m_Name: Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 5c925c1f-c24f-411b-94b2-089770e74274
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5d581089-27af-43ac-be38-50ab1047ebf1
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Press
+      m_Flags: 0
+    m_Flags: 0
+  tap:
+    m_Name: Tap
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2120fea9-0373-4054-924e-240344b3cee1
+    m_Processors: 
+    m_Interactions: Tap
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f39bab33-ea3e-4589-9727-c7ae0458c9a4
+      m_Path: <Touchscreen>/primaryTouch/tap
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tap
+      m_Flags: 0
+    m_Flags: 0
+  doublePress:
+    m_Name: Double Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: f614e4e2-c858-4085-9c74-7fcf37aad350
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: fead753a-acb5-4ba0-9efa-dd784a8a97b6
+      m_Path: <Touchscreen>/touch1/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Double Press
+      m_Flags: 0
+    m_Flags: 0
+  screenPosition:
+    m_Name: Screen Position
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: d7ef6070-1603-49af-ada0-248cf8d67416
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7e3d9a63-6102-49d9-b31e-c10e71f25361
+      m_Path: <Touchscreen>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Screen Position
+      m_Flags: 0
+    m_Flags: 0
+  axis:
+    m_Name: Axis
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: a47eb934-4f4e-47a4-9020-5e6882cf079c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44d623fa-1878-4cf4-8f40-927d77a98c49
+      m_Path: <Touchscreen>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Axis
+      m_Flags: 0
+    m_Flags: 0
+  currentScreenPosition: {x: 0, y: 0}
+  rotation: {x: 0, y: 0}
+  isDragged: 0
+  isRotated: 0
+  openMenu: 0
+--- !u!114 &1610646393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610646378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773b878261c709e47bf32783356e2835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1610646394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610646378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b06df737dd7994409b4596d4386340c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622744075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,7 +3760,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2007277708}
+  - {fileID: 265031901}
   - {fileID: 1855061232}
   - {fileID: 1622744076}
   - {fileID: 897328870}
@@ -3678,7 +4054,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007277707}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3687,11 +4063,11 @@ RectTransform:
   - {fileID: 1528711190}
   - {fileID: 1750494358}
   - {fileID: 2087584232}
-  m_Father: {fileID: 1868179900}
+  m_Father: {fileID: 265031901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -850}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007277709
@@ -4050,11 +4426,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 314767618}
+      addedObject: {fileID: 314767619}
     - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 314767619}
+      addedObject: {fileID: 314767626}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767625}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767624}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767623}
   m_SourcePrefab: {fileID: 100100000, guid: 79a191b1598a50845adfeadc66096754, type: 3}
 --- !u!1001 &3884207314633763012
 PrefabInstance:
@@ -4214,7 +4602,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1166178420}
+      addedObject: {fileID: 1166178427}
+    - targetCorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1166178426}
+    - targetCorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1166178425}
+    - targetCorrespondingSourceObject: {fileID: 8337076731437390950, guid: ffba1ad1537e80f4984dd412e39ad100,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1166178424}
   m_SourcePrefab: {fileID: 100100000, guid: ffba1ad1537e80f4984dd412e39ad100, type: 3}
 --- !u!1001 &9186136305070714926
 PrefabInstance:

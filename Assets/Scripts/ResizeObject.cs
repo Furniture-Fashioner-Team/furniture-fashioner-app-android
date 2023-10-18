@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectResizer : MonoBehaviour
+public class ResizeObject : MonoBehaviour
 {
     public Slider sizeSlider;
     private Transform tr;
     private Vector3 origSize;
+    private ObjectActions objActions;
     private float[] minMax = { 0.1f, 2.0f };
     public TMPro.TMP_Text scaleText;
 
@@ -13,17 +14,20 @@ public class ObjectResizer : MonoBehaviour
     {
         tr = transform;
         origSize = tr.localScale;
+        objActions = GetComponent<ObjectActions>();
     }
 
     private void Start()
     {
         sizeSlider.value = 0.5f;
-        sizeSlider.onValueChanged.AddListener(ResizeObject);
+        sizeSlider.onValueChanged.AddListener(Resize);
     }
 
-    public void ResizeObject(float modifier)
+    public void Resize(float modifier)
     {
-        tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
-        scaleText.text = $"Scale: {tr.localScale.x:F2}";
+        if (objActions.openMenu == true) {
+            tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
+            scaleText.text = $"Scale: {tr.localScale.x:F2}";
+        }
     }
 }
