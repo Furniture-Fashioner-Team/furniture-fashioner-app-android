@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectResizer : MonoBehaviour
+public class ResizeObject : MonoBehaviour
 {
     public Slider sizeSlider;
     private Transform tr;
@@ -17,10 +17,10 @@ public class ObjectResizer : MonoBehaviour
     private void Start()
     {
         sizeSlider.value = 0.5f;
-        sizeSlider.onValueChanged.AddListener(ResizeObject);
+        sizeSlider.onValueChanged.AddListener(Resize);
     }
 
-    public void ResizeObject(float modifier)
+    public void Resize(float modifier)
     {
         tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
     }

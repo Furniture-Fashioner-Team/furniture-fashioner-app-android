@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-class FurnitureLoad
+class LoadFurniture
 {
     private static String pathT = "Assets/Prefabs/Thumbnails/";
     private static String pathF = "Assets/Prefabs/MockFurniture/";
@@ -22,7 +22,7 @@ class FurnitureLoad
         return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.one / 2f);
     }
  
-    public static List<Furniture> LoadFurniture()
+    public static List<Furniture> Load()
     {
         foreach (String name in names)
         {

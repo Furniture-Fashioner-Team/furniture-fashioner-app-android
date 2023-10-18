@@ -8,7 +8,7 @@ class Data
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
-        furniture = FurnitureLoad.LoadFurniture();
-        furniture.ForEach(f => Debug.Log(f.ToString()));
+        furniture = LoadFurniture.Load();
+        // furniture.ForEach(f => Debug.Log(f.ToString()));
     } 
 }
