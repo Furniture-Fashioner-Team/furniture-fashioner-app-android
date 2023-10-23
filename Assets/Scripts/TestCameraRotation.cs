@@ -2,13 +2,15 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CameraRotation : MonoBehaviour
+// Test script used for simulating camera rotation during regular use
+public class TestCameraRotation : MonoBehaviour
 {
     public float rotationSpeed = 30f; // Rotation speed in degrees per second
 
+    // The Update() method is called once per frame and is used for input handling
     private void Update()
     {
-        // Handle camera rotation using keyboard input
+        // Handle camera rotation using keyboard input (wasd / arrow keys)
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         RotateCamera(horizontalInput, verticalInput);

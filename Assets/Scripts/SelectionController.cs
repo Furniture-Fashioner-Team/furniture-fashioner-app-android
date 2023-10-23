@@ -12,8 +12,6 @@ public class SelectionController : MonoBehaviour
     public float distanceFromCamera = 5f; // Distance from the camera to position objects
     public TMPro.TMP_Dropdown dropdown; // Reference to a dropdown UI element, used for object selection
 
-    private bool hasPositioned = false;
-
     // Dictionary to track if each object has been positioned
     private Dictionary<string, bool> objectPositioned = new Dictionary<string, bool>();
 
@@ -134,7 +132,5 @@ public class SelectionController : MonoBehaviour
                 ToggleObjectVisibility(child, false);
             }
         }
-
-        hasPositioned = false;
     }
 }

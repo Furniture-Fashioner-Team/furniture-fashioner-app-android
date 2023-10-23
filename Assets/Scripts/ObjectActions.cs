@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // manages the touch input actions to move and rotate an object and open object's tap menu
-
 public class ObjectActions : MonoBehaviour
 {
     // input actions
