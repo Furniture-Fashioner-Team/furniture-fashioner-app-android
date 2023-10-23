@@ -6,10 +6,11 @@ using TMPro;
 
 public class SelectionController : MonoBehaviour
 {
-    public Transform[] objectsToToggle; // An array of objects to enable/disable
-    public Transform mainCamera;
-    public float distanceFromCamera = 5f;
-    public TMPro.TMP_Dropdown dropdown;
+    // The parent object containing the furniture, aka children to toggle
+    public Transform parentObject;
+    public Transform mainCamera; // Reference to the main camera in the scene
+    public float distanceFromCamera = 5f; // Distance from the camera to position objects
+    public TMPro.TMP_Dropdown dropdown; // Reference to a dropdown UI element, used for object selection
 
     private bool hasPositioned = false;
 
@@ -20,19 +21,22 @@ public class SelectionController : MonoBehaviour
     {
         if (dropdown == null)
         {
+            // Display an error message if the dropdown is not assigned
             Debug.LogError("Dropdown is not assigned!");
             enabled = false;
             return;
         }
 
+        // Add a listener to respond to changes in the dropdown value
         dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
     }
 
     private void OnDropdownValueChanged(int selection)
     {
+        // Get the name of the selected object from the dropdown
         string selectedObjectName = dropdown.options[selection].text;
 
-        // Check if the object has been positioned before
+        // Check if the object has been positioned before, we only want to position the object in front of the camera on first selection
         if (!objectPositioned.ContainsKey(selectedObjectName) || !objectPositioned[selectedObjectName])
         {
             // Position the object in front of the camera
@@ -40,44 +44,55 @@ public class SelectionController : MonoBehaviour
             objectPositioned[selectedObjectName] = true;
         }
 
-        foreach (Transform objToToggle in objectsToToggle)
+        if (parentObject != null)
         {
-            if (objToToggle != null)
+            // Iterate through the children of the parent object
+            foreach (Transform child in parentObject)
             {
-                if (selectedObjectName == objToToggle.gameObject.name)
+                if (child != null)
                 {
-                    // Enable MeshRenderer and Collider components
-                    ToggleObjectVisibility(objToToggle, true);
-                }
-                else
-                {
-                    // Disable MeshRenderer and Collider components
-                    ToggleObjectVisibility(objToToggle, false);
-                }
-            }
-        }
-    }
-
-    private void PositionObjectInFrontOfCamera(string objectName)
-    {
-        if (objectsToToggle.Length > 0 && mainCamera != null)
-        {
-            Vector3 cameraPosition = mainCamera.transform.position;
-            Vector3 cameraForward = mainCamera.transform.forward;
-            Quaternion cameraRotation = mainCamera.transform.rotation;
-            Vector3 targetPosition = cameraPosition + cameraRotation * Vector3.forward * distanceFromCamera;
-
-            foreach (Transform objToToggle in objectsToToggle)
-            {
-                if (objToToggle != null && objectName == objToToggle.gameObject.name)
-                {
-                    objToToggle.position = targetPosition;
+                    if (selectedObjectName == child.gameObject.name)
+                    {
+                        // Enable MeshRenderer and Collider components for the selected object
+                        ToggleObjectVisibility(child, true);
+                    }
+                    else
+                    {
+                        // Disable MeshRenderer and Collider components for other objects
+                        ToggleObjectVisibility(child, false);
+                    }
                 }
             }
         }
         else
         {
-            Debug.LogError("Objects to toggle or mainCamera is null in PositionObjectInFrontOfCamera!");
+            // Display an error if the parent object is not assigned
+            Debug.LogError("Parent object is not assigned!");
+        }
+    }
+
+    private void PositionObjectInFrontOfCamera(string objectName)
+    {
+        if (parentObject != null && mainCamera != null)
+        {
+            // Calculate the position in front of the camera and move the selected object there
+            Vector3 cameraPosition = mainCamera.transform.position;
+            Vector3 cameraForward = mainCamera.transform.forward;
+            Quaternion cameraRotation = mainCamera.transform.rotation;
+            Vector3 targetPosition = cameraPosition + cameraRotation * Vector3.forward * distanceFromCamera;
+
+            foreach (Transform child in parentObject)
+            {
+                if (child != null && objectName == child.gameObject.name)
+                {
+                    child.position = targetPosition;
+                }
+            }
+        }
+        else
+        {
+            // Display an error if the parent object or main camera is not assigned
+            Debug.LogError("Parent object or mainCamera is null in PositionObjectInFrontOfCamera!");
         }
     }
 
@@ -85,7 +100,7 @@ public class SelectionController : MonoBehaviour
     {
         if (obj != null)
         {
-            // Enable or disable MeshRenderer and Collider components
+            // Enable or disable MeshRenderer and Collider components for the object
             MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
             if (renderer != null)
             {
@@ -100,23 +115,26 @@ public class SelectionController : MonoBehaviour
         }
     }
 
-    public void ResetSelection()
-{
-    // Reset the dictionary tracking if objects have been positioned
-    objectPositioned.Clear();
-
-    // Clear the dropdown selection (set it to the first item)
-    if (dropdown != null)
+      public void ResetSelection()
     {
-        dropdown.value = 0; // Set it to the default value (first item)
-    }
+        // Reset the dictionary tracking if objects have been positioned
+        objectPositioned.Clear();
 
-    // Hide all objects
-    foreach (Transform objToToggle in objectsToToggle)
-    {
-        ToggleObjectVisibility(objToToggle, false);
-    }
+        // Clear the dropdown selection (set it to the first item)
+        if (dropdown != null)
+        {
+            dropdown.value = 0; // Set it to the default value (first item)
+        }
 
-    hasPositioned = false;
-}
+        // Hide all objects by disabling their MeshRenderer and Collider components
+        if (parentObject != null)
+        {
+            foreach (Transform child in parentObject)
+            {
+                ToggleObjectVisibility(child, false);
+            }
+        }
+
+        hasPositioned = false;
+    }
 }
