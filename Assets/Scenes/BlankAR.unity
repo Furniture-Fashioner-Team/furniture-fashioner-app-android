@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,13 +387,58 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314767604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
   scaleText: {fileID: 2087584233}
+--- !u!114 &314767623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f14f3db151584db1ef3d469710520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arSessionOrigin: {fileID: 0}
+  scaleMultiplier: 0.2
+--- !u!114 &314767624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlanePrefab: {fileID: 0}
+  m_DetectionMode: -1
+--- !u!114 &314767625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314767604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 0}
+  m_OriginBaseGameObject: {fileID: 314767604}
+  m_CameraFloorOffsetObject: {fileID: 0}
+  m_RequestedTrackingOriginMode: 0
+  m_CameraYOffset: 1.1176
 --- !u!1 &336648582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,6 +4100,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 314767619}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767623}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767625}
+    - targetCorrespondingSourceObject: {fileID: 7701424805960093675, guid: 79a191b1598a50845adfeadc66096754,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 314767624}
   m_SourcePrefab: {fileID: 100100000, guid: 79a191b1598a50845adfeadc66096754, type: 3}
 --- !u!1001 &3884207314633763012
 PrefabInstance:
