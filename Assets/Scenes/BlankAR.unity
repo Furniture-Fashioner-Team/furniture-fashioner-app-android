@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -540,7 +540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
 --- !u!65 &238511514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -575,7 +574,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238511509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
   m_Name: 
@@ -1113,7 +1112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
 --- !u!114 &506387076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506387058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
   m_Name: 
@@ -2107,7 +2105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
 --- !u!114 &1159848675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,7 +2112,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159848663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
   m_Name: 
@@ -2499,7 +2496,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
 --- !u!65 &1192824955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2534,7 +2530,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192824950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
   m_Name: 
@@ -2931,7 +2927,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
 --- !u!65 &1453777020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2966,7 +2961,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453777015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
   m_Name: 
@@ -3385,7 +3380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 2007277709}
-  scaleText: {fileID: 2087584233}
 --- !u!114 &1610646391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3393,7 +3387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147544866360}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a9f67bd6765f1e4faf62ce39ec9798c, type: 3}
   m_Name: 
@@ -4724,7 +4718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
+  m_AnchoredPosition: {x: -100, y: 2.9}
   m_SizeDelta: {x: 85.569, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087584233
@@ -4747,7 +4741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Scale:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4774,7 +4768,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

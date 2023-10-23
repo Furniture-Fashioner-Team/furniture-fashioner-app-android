@@ -8,7 +8,7 @@ public class ResizeObject : MonoBehaviour
     private Vector3 origSize;
     private ObjectActions objActions;
     private float[] minMax = { 0.1f, 2.0f };
-    public TMPro.TMP_Text scaleText;
+    // public TMPro.TMP_Text scaleText;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class ResizeObject : MonoBehaviour
     {
         if (objActions.openMenu == true) {
             tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
-            scaleText.text = $"Scale: {tr.localScale.x:F2}";
+            // scaleText.text = $"Scale: {tr.localScale.x:F2}";
         }
     }
 }
