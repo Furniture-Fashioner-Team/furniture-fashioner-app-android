@@ -21,7 +21,7 @@ public class Data
     
     The idea is to provide the application with a list of Furniture objects that can be referenced
     in other scripts like this: 'Data.furniture'. The 3D models contained in the obj variable
-    of these 'Furniture' objects can then be added to the application using the Unity 'Instantiate'
+    of these Furniture objects can then be added to the application using the Unity Instantiate
     function, and the Sprites contained in the spr variable of the Furniture objects can be added
     to a potential visual object menu.
 */
