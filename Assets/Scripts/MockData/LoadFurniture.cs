@@ -41,3 +41,8 @@ class LoadFurniture
         return furniture;
     }
 }
+
+/*
+    In this script, Furniture objects are created and stored in the furniture class variable.
+    When the loading of objects is complete, the Load method returns a list of Furniture objects.
+*/
