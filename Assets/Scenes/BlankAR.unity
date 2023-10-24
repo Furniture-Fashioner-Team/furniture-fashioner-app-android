@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2323,17 +2323,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 67e164cf9088c418f88eaa66b5df1b04,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67e164cf9088c418f88eaa66b5df1b04,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67e164cf9088c418f88eaa66b5df1b04,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 27.999994
+      value: 47.999992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67e164cf9088c418f88eaa66b5df1b04,
         type: 3}
@@ -2996,17 +2996,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b07339905c77046da94dd235983d5c52,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b07339905c77046da94dd235983d5c52,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b07339905c77046da94dd235983d5c52,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.40909103
+      value: 0.68181837
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b07339905c77046da94dd235983d5c52,
         type: 3}
@@ -3579,6 +3579,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3630,7 +3645,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 59ee8cc85c331296eb04ef85f953a679,
         type: 3}
