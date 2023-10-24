@@ -22,10 +22,11 @@ As a user, I want to be able to see the object in the real-life scale.
 - 2B.2 the object is scaled according to the room's scale (O)
 
 ## Story#3
-As a user, I want to use a search tool to find objects to place in the AR environment.
+As a user, I want to use a tool to find objects to place in the AR environment.
 - 3.1 the user can choose from different 3d objects (M)
 - 3.2 the user can search objects by category (O)
 - 3.3 the user can filter or rearrange the search results by price, etc. (N)
+- 3.4 the user can select objects from a list. (O)
 
 ## Story#4
 As a user, I want to be able to anchor multiple objects in my environment.
