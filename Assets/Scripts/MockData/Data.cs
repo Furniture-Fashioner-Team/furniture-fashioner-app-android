@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Data
+class Data
 {
     public static List<Furniture> furniture;
 
