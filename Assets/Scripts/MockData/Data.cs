@@ -3,14 +3,24 @@ using UnityEngine;
 
 class Data
 {
+    public static string[] sceneNames = { "Menu", "ARCamera" };
     public static List<Furniture> furniture;
+    public static int furnitureCount;
+    public static Vector2 scrollViewSize;
+    public static int[] dim = { Screen.width, Screen.height };
+    public static float imgScaleFact;
+    public static Vector2 spriteImageSize;
+    public static Dictionary<int, GameObject> furnitureDict = new();
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
         furniture = LoadFurniture.Load();
-        // furniture.ForEach(f => Debug.Log(f.ToString()));
-    } 
+        furnitureCount = furniture.Count;
+        scrollViewSize = new Vector2(dim[0] * 0.5f, dim[1] * 0.45f);
+        imgScaleFact = scrollViewSize.y * 0.22f;
+        spriteImageSize = new Vector2(1.920f * imgScaleFact, 1.080f * imgScaleFact);
+    }
 }
 
 /*
