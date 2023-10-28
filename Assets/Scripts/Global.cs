@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-class Data
+class Global
 {
     public static string[] sceneNames = { "Menu", "ARCamera" };
     public static List<Furniture> furniture;
@@ -11,6 +12,8 @@ class Data
     public static float imgScaleFact;
     public static Vector2 spriteImageSize;
     public static Dictionary<int, GameObject> furnitureDict = new();
+    public static Image selectedImage;
+    public static int? furnitureKey;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
