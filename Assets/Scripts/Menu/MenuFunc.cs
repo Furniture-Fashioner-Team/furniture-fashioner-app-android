@@ -56,3 +56,13 @@ class MenuFunc
         img.color = col;
     }
 }
+
+/*
+    The MenuFunc class of this script contains helper methods used by the Menu class
+    of the Menu script. GetVector2 returns the desired 2-dimensional vector. GetSprImg
+    returns the prefab component to which a specific item's image sprite has been added.
+    AddEventTrigger adds an event listener to the cloned image-containing prefab component,
+    which allows modification of the Global.furnitureKey variable's value and, on the other hand,
+    the transparency of the 'clicked' menu image, so that the user knows which item is selected.
+    The remaining methods are helper methods for AddEventTrigger.
+*/
