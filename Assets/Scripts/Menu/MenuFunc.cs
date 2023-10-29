@@ -1,9 +1,16 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 class MenuFunc
 {
+    public static void ButtonSettings(RectTransform rT)
+    {
+        rT.sizeDelta = Global.buttonSize;
+        rT.anchoredPosition = new Vector2(0, Global.dim[1] * -0.23f);
+        rT.GetComponentInChildren<TextMeshProUGUI>().fontSize = Global.buttonFontSize;
+    }
     public static Vector2 GetVector2(float mod, int n)
     {
         return new Vector2(0, Global.spriteImageSize.y * mod * n);
@@ -59,7 +66,8 @@ class MenuFunc
 
 /*
     The MenuFunc class of this script contains helper methods used by the Menu class
-    of the Menu script. GetVector2 returns the desired 2-dimensional vector. GetSprImg
+    of the Menu script.  ButtonSettings programmatically sets the size and font size
+    of the toCamera button. GetVector2 returns the desired 2-dimensional vector. GetSprImg
     returns the prefab component to which a specific item's image sprite has been added.
     AddEventTrigger adds an event listener to the cloned image-containing prefab component,
     which allows modification of the Global.furnitureKey variable's value and, on the other hand,

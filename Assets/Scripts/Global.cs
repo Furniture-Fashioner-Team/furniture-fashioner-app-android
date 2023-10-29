@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,8 @@ class Global
     public static List<Furniture> furniture;
     public static int furnitureCount;
     public static Vector2 scrollViewSize;
+    public static Vector2 buttonSize;
+    public static int buttonFontSize;
     public static int[] dim = { Screen.width, Screen.height };
     public static float imgScaleFact;
     public static Vector2 spriteImageSize;
@@ -21,6 +24,8 @@ class Global
         furniture = LoadFurniture.Load();
         furnitureCount = furniture.Count;
         scrollViewSize = new Vector2(dim[0] * 0.5f, dim[1] * 0.45f);
+        buttonSize = new Vector2(dim[0] * 0.208f, dim[1] * 0.032f);
+        buttonFontSize = (int)Math.Round(dim[0] * 0.029f);
         imgScaleFact = scrollViewSize.y * 0.22f;
         spriteImageSize = new Vector2(1.920f * imgScaleFact, 1.080f * imgScaleFact);
     }
