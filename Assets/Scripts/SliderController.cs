@@ -31,9 +31,12 @@ public class SliderController : MonoBehaviour
     void Update()
     {
         // shows/hides the size slider according to openMenu value in the objectActions script
-        if (GetActiveObject() != null) {
+        if (GetActiveObject() != null) 
+        {
             slider.gameObject.SetActive(true);
-        } else {
+        } 
+        else 
+        {
             slider.gameObject.SetActive(false);
         }
     }

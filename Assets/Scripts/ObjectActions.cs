@@ -16,36 +16,42 @@ public class ObjectActions : MonoBehaviour
 
     public Vector2 currentScreenPosition; // screen touch coordinates (xy)
     public Vector2 rotation; // the amount of rotation
-    
-    // sets the object active upon touch
-    public bool isActive {
-        get {
-            // raycast for checking if the touch hits an object in the view
-            Ray ray = Camera.main.ScreenPointToRay(currentScreenPosition);
-            RaycastHit hit;
-            // any object is found
-            if (Physics.Raycast(ray, out hit)) {
-                // compares the transform of the found object to the script's transform 
-                // (= if they match, the object has this script and can be set active)
-                if (hit.transform == transform) {
-                    return true;
-                // an object without this script is found
-                } else {
-                    return false;
-                }
-            // no object is found
-            } else {
-                return false;
-            }
-        }
-    }
-    
+
     public bool isDragged = false;
     public bool isRotated = false;
     public bool openMenu = false;
+    
+    // sets the object active upon touch
+    public bool isActive() 
+    {
+        // raycast for checking if the touch hits an object in the view
+        Ray ray = Camera.main.ScreenPointToRay(currentScreenPosition);
+        RaycastHit hit;
+        // any object is found
+        if (Physics.Raycast(ray, out hit)) 
+        {
+            // compares the transform of the found object to the script's transform 
+            // (= if they match, the object has this script and can be set active)
+            if (hit.transform == transform) 
+            {
+                return true;
+            } 
+            // an object without this script is found
+            else 
+            {
+                return false;
+            }
+        } 
+        // no object is found
+        else 
+        {
+            return false;
+        }
+    }
 
     // setup tasks
-    private void Awake() {
+    private void Awake() 
+    {
         screenPosition.Enable();
         axis.Enable();
         press.Enable();
@@ -53,45 +59,58 @@ public class ObjectActions : MonoBehaviour
         doublePress.Enable();
 
         // touch position
-        screenPosition.performed += context => {
+        screenPosition.performed += context => 
+        {
             currentScreenPosition = context.ReadValue<Vector2>();
         };
         // axis
-        axis.performed += context => {
+        axis.performed += context => 
+        {
             rotation = context.ReadValue<Vector2>();
         };
 
         // press until released: activates dragging
-        press.performed += _ => {
-            if (isActive) {
+        press.performed += _ => 
+        {
+            if (isActive()) 
+            {
                 isDragged = true;
             }
         };
-        press.canceled += _ => {
+        press.canceled += _ => 
+        {
             isDragged = false;
             isRotated = false;
         };
 
         // tap: activates an object-specific menu, deactivates when tapped anywhere else
-        tap.performed += _ => {
-            if (isActive) {
+        tap.performed += _ => 
+        {
+            if (isActive()) 
+            {
                 openMenu = true;
-            } else {
+            } 
+            else 
+            {
                 openMenu = false;
             }
         };
-        tap.canceled += _ => {
+        tap.canceled += _ => 
+        {
             openMenu = false;
         };
 
         // 2nd finger press: activates rotating
-        doublePress.performed += _ => {
-            if (isActive) {
+        doublePress.performed += _ => 
+        {
+            if (isActive()) 
+            {
                 isRotated = true;
                 isDragged = false;
             }
         };
-        doublePress.canceled += _ => {
+        doublePress.canceled += _ => 
+        {
             isRotated = false;
         };
     }
