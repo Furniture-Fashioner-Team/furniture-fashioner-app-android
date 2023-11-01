@@ -27,6 +27,7 @@ As a user, I want to use a tool to find objects to place in the AR environment.
 - 3.2 the user can search objects by category (O)
 - 3.3 the user can filter or rearrange the search results by price, etc. (N)
 - 3.4 the user can select objects from a list. (O)
+- 3.5 the user can navigate between scenes using an arrow button. (O)
 
 ## Story#4
 As a user, I want to be able to anchor multiple objects in my environment.
@@ -39,6 +40,7 @@ As a user, I want to be able to anchor multiple objects in my environment.
 As a user, I want the objects to anchor to the floor, so that the object placement looks and feels realistic.
 - 5.1 the app recognizes different surfaces in the camera view (M)
 - 5.2 the object anchors to the floor (M)
+- 5.3 the application creates a new plane to anchor game objects to (O)
 
 ## Story#6
 As a user, I want to be able to take a picture of the view with the placed object(s).
