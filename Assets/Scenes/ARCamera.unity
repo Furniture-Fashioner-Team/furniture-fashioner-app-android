@@ -683,6 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08a3b4bbb0869acfa7a5c10e86b4b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 2007277709}
 --- !u!1 &1380232209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1069,7 @@ GameObject:
   - component: {fileID: 2007277708}
   - component: {fileID: 2007277709}
   m_Layer: 5
-  m_Name: sizeSlider
+  m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
