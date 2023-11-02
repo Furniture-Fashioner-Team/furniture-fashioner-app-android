@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 
 class LoadFurniture
@@ -27,9 +26,9 @@ class LoadFurniture
             try
             {
                 Texture2D tex = new Texture2D(0, 0);
-                tex.LoadImage(File.ReadAllBytes(pathT + name + ".png"));
-                GameObject obj = AssetDatabase.LoadAssetAtPath<GameObject>(pathF + name + ".fbx");
-                furniture.Add(new Furniture(name, GetSprite(tex), obj));
+                // tex.LoadImage(File.ReadAllBytes(pathT + name + ".png"));
+                // GameObject obj = AssetDatabase.LoadAssetAtPath<GameObject>(pathF + name + ".fbx");
+                // furniture.Add(new Furniture(name, GetSprite(tex), obj));
             }
             catch (Exception e)
             {

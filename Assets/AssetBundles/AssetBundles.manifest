@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 3044928858
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: ardebugmenu
+      Dependencies: {}
+    Info_1:
+      Name: mockfurniture
+      Dependencies: {}
+    Info_2:
+      Name: thumbs
+      Dependencies: {}
