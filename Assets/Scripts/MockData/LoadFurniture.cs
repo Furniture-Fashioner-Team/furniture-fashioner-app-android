@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 class LoadFurniture
 {
-    private static String pathT = "Assets/Prefabs/Thumbnails/";
-    private static String pathF = "Assets/Prefabs/MockFurniture/";
+    public static string appDP = Application.dataPath;
+    public static AssetBundle aBT;
+    public static AssetBundle aBF;
     private static String[] names = SetNames();
     private static List<Furniture> furniture = new();
 
@@ -21,19 +21,21 @@ class LoadFurniture
     }
     public static List<Furniture> Load()
     {
-        foreach (String name in names)
+        try
         {
-            try
+            aBT = AssetBundle.LoadFromFile(appDP + "/AssetBundles/thumbs");
+            aBF = AssetBundle.LoadFromFile(appDP + "/AssetBundles/mockfurniture");
+
+            foreach (String name in names)
             {
-                Texture2D tex = new Texture2D(0, 0);
-                // tex.LoadImage(File.ReadAllBytes(pathT + name + ".png"));
-                // GameObject obj = AssetDatabase.LoadAssetAtPath<GameObject>(pathF + name + ".fbx");
-                // furniture.Add(new Furniture(name, GetSprite(tex), obj));
+                Texture2D tex = aBT.LoadAsset<Texture2D>(name);
+                GameObject obj = aBF.LoadAsset<GameObject>(name);
+                furniture.Add(new Furniture(name, GetSprite(tex), obj));
             }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
         }
         return furniture;
     }
