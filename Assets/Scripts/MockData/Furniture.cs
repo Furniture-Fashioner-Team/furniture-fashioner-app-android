@@ -13,7 +13,6 @@ class Furniture
         this.spr = s;
         this.obj = o;
     }
-
     public override String ToString()
     {
         return String.Format("Name: {0}\nSprite: {1}\nGameObject: {2}\n\n", name, spr, obj);

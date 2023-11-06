@@ -15,7 +15,7 @@ public class MoveAndRotateObject : MonoBehaviour
     private Vector3 worldPosition { 
         get{
             // adds the distance between camera and object as z because the initial screenPosition is only xy
-            float distance = 5f;
+            float distance = Camera.main.WorldToScreenPoint(transform.position).z;
             return Camera.main.ScreenToWorldPoint(currentScreenPosition + new Vector3(0, 0, distance));
         }
     }

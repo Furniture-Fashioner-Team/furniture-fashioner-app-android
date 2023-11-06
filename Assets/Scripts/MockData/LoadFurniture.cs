@@ -1,48 +1,41 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 
 class LoadFurniture
 {
-    private static String pathT = "Assets/Prefabs/Thumbnails/";
-    private static String pathF = "Assets/Prefabs/MockFurniture/";
+    public static string sAP = Application.streamingAssetsPath;
+    public static AssetBundle aBT;
+    public static AssetBundle aBF;
     private static String[] names = SetNames();
-    private static List<Furniture> furniture = new();
 
     private static String[] SetNames()
     {
         return new String[] { "ikea-hyllykko", "jakkara", "lavitta",
             "palli", "poyta", "soffa" };
     }
-
     private static Sprite GetSprite(Texture2D tex)
     {
         return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.one / 2f);
     }
- 
-    public static List<Furniture> Load()
+    public static void Load(List<Furniture> list)
     {
-        foreach (String name in names)
+        try
         {
-            try
+            aBT = AssetBundle.LoadFromFile(Path.Combine(sAP, "thumbs"));
+            aBF = AssetBundle.LoadFromFile(Path.Combine(sAP, "mockfurniture"));
+
+            foreach (String name in names)
             {
-                Texture2D tex = new Texture2D(0, 0);
-                tex.LoadImage(File.ReadAllBytes(pathT + name + ".png"));
-                GameObject obj = AssetDatabase.LoadAssetAtPath<GameObject>(pathF + name + ".fbx");
-                furniture.Add(new Furniture(name, GetSprite(tex), obj));
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
+                Texture2D tex = aBT.LoadAsset<Texture2D>(name);
+                GameObject obj = aBF.LoadAsset<GameObject>(name);
+                list.Add(new Furniture(name, GetSprite(tex), obj));
             }
         }
-        return furniture;
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 }
-
-/*
-    In this script, Furniture objects are created and stored in the furniture class variable.
-    When the loading of objects is complete, the Load method returns a list of Furniture objects.
-*/
