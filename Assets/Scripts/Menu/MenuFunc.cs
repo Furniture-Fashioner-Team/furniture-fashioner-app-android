@@ -1,15 +1,24 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 class MenuFunc
 {
-    public static void ButtonSettings(RectTransform rT)
+    public static void ScrollViewSettings(RectTransform rT, RectTransform rTCont)
     {
+        rT.sizeDelta = Global.scrollViewSize;
+        rT.anchoredPosition = new Vector2(0, Global.dim[1] * 0.05f);
+        rTCont.sizeDelta = GetVector2(1.1f, Global.furnitureCount);
+    }
+    public static void ButtonSettings(Button b)
+    {
+        RectTransform rT = b.GetComponent<RectTransform>();
         rT.sizeDelta = Global.buttonSize;
         rT.anchoredPosition = new Vector2(0, Global.dim[1] * -0.23f);
         rT.GetComponentInChildren<TextMeshProUGUI>().fontSize = Global.buttonFontSize;
+        b.onClick.AddListener(() => SceneManager.LoadScene(Global.sceneNames[1]));
     }
     public static Vector2 GetVector2(float mod, int n)
     {

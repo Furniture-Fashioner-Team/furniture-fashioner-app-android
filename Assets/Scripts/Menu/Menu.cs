@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 class Menu : MonoBehaviour
 {
@@ -12,16 +11,13 @@ class Menu : MonoBehaviour
 
     private void Awake()
     {
-        scrollView.sizeDelta = Global.scrollViewSize;
-        scrollView.anchoredPosition = new Vector2(0, Global.dim[1] * 0.05f);
-        scrollViewContent.sizeDelta = MenuFunc.GetVector2(1.1f, Global.furnitureCount);
+        MenuFunc.ScrollViewSettings(scrollView, scrollViewContent);
         sprImgPlace = MenuFunc.GetVector2(0.55f, Global.furnitureCount - 1);
-        MenuFunc.ButtonSettings(toCamera.GetComponent<RectTransform>());
+        MenuFunc.ButtonSettings(toCamera);
     }
     private void Start()
     {
         AddListItems();
-        toCamera.onClick.AddListener(ToCamera);
     }
     private void AddListItems()
     {
@@ -35,10 +31,6 @@ class Menu : MonoBehaviour
             sprImgPlace.y -= Global.spriteImageSize.y * 1.1f;
             Global.furnitureDict[id] = f.obj;
         }
-    }
-    private void ToCamera()
-    {
-        SceneManager.LoadScene(Global.sceneNames[1]);
     }
 }
 

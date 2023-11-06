@@ -1,18 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 class ARCamera : MonoBehaviour
 {
+    public GameObject arrowLeft;
     private GameObject newObj;
     public Slider slider;
 
     private void Awake()
     {
-        NewObject();
+        ARCameraFunc.ArrowLeftSettings(arrowLeft);
     }
     private void Start()
     {
+        NewObject();
         AddResizeObject();
         // Destroy(newObj);
     }
@@ -28,8 +29,8 @@ class ARCamera : MonoBehaviour
     {
         if (newObj != null)
         {
-            ResizeObject resObj = newObj.AddComponent<ResizeObject>();
-            resObj.slider = slider;
+            ResizeObject rO = newObj.AddComponent<ResizeObject>();
+            rO.slider = slider;
         }
     }
 }

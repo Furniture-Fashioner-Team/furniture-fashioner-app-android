@@ -14,6 +14,8 @@ class Global
     public static int[] dim = { Screen.width, Screen.height };
     public static float imgScaleFact;
     public static Vector2 spriteImageSize;
+    public static Vector2 arrowLeftSize;
+    public static Vector2 arrowLeftPlace;
     public static Dictionary<int, GameObject> furnitureDict = new();
     public static Image selectedImage;
     public static int? furnitureKey;
@@ -28,6 +30,8 @@ class Global
         buttonFontSize = (int)Math.Round(dim[0] * 0.029f);
         imgScaleFact = scrollViewSize.y * 0.22f;
         spriteImageSize = new Vector2(1.920f * imgScaleFact, 1.080f * imgScaleFact);
+        arrowLeftSize = new Vector2(dim[0] * 0.0694f, dim[1] * 0.0324f);
+        arrowLeftPlace = new Vector2(Global.dim[0] * -0.45f, Global.dim[1] * 0.48f);
     }
 }
 
