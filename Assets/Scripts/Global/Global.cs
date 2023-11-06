@@ -6,7 +6,7 @@ using UnityEngine.UI;
 class Global
 {
     public static string[] sceneNames = { "Menu", "ARCamera" };
-    public static List<Furniture> furniture;
+    public static List<Furniture> furniture = new();
     public static int furnitureCount;
     public static Vector2 scrollViewSize;
     public static Vector2 buttonSize;
@@ -21,7 +21,7 @@ class Global
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
-        furniture = LoadFurniture.Load();
+        LoadFurniture.Load(furniture);
         furnitureCount = furniture.Count;
         scrollViewSize = new Vector2(dim[0] * 0.5f, dim[1] * 0.45f);
         buttonSize = new Vector2(dim[0] * 0.208f, dim[1] * 0.032f);
