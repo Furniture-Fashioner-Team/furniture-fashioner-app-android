@@ -15,4 +15,4 @@ For **Sprint 1** the plan was to have a working camera view with rudimental obje
 
 For **Sprint 2** our focus has been on developing surface recognition and identification + user interface modification so that the user can select from multiple objects. New 3D models for furniture have also been added.
 
-For **Sprint 3** we aim to solidify our communication skills to keep track of working progress more effectively. In regards to the development of the app, we are focusing on developing more nuanced ways to navigate the application as well as manipulate objects (deletion/duplication). We're also intending to further develop plane detection as well as object anchoring..3D
+For **Sprint 3** we aim to solidify our communication skills to keep track of working progress more effectively. In regards to the development of the app, we are focusing on developing more nuanced ways to navigate the application as well as manipulate objects (deletion/duplication). We're also intending to further develop plane detection as well as object anchoring.
