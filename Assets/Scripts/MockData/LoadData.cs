@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-class LoadFurniture
+class LoadData
 {
     public static string sAP = Application.streamingAssetsPath;
     public static AssetBundle aBT;
@@ -39,3 +39,12 @@ class LoadFurniture
         }
     }
 }
+
+/*
+    In this script, AssetBundles containing images and 3D models of furniture are loaded from
+    the StreamingAssets folder. These images are used to create sprites. The use of AssetBundles
+    as a source is necessary if you want to add data to the application at runtime. It appears
+    that using AssetBundles as a source is also possible asynchronously, so in this approach,
+    we are coming closer to the situation in the final version of the application where data is
+    loaded into the application, for example, using a REST API.
+*/
