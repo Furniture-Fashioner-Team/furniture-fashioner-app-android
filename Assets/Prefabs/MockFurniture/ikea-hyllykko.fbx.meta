@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5fa006f4b53eb87d3b9e1b679865b5a1
+guid: b07339905c77046da94dd235983d5c52
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -105,5 +105,5 @@ ModelImporter:
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
-  assetBundleName: mockfurniture
+  assetBundleName: 
   assetBundleVariant: 

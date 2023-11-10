@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Scripts/ResizeObject.cs.meta
+guid: 9600672238ed7cf4e9298121e104aeec
+========
+guid: b0490ab11f3686e4ab0019e91262a978
+>>>>>>>> origin/aapon-branch:Assets/Scripts/CameraRotation.cs.meta
+=======
+guid: 41c979bc02f97c24a9a4e376a216e79e
+>>>>>>> origin/aapon-branch
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

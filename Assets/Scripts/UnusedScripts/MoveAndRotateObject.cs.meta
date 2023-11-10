@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Scripts/MoveAndRotateObject.cs.meta
+guid: fb658b5609070204081daf4737b9bb20
+========
+guid: 161f3d60501287b479264da12913a5cc
+>>>>>>>> origin/aapon-branch:Assets/Scripts/ARObjectMover.cs.meta
+=======
+guid: 06f104f90ff2da543af7cc8a2ff071bc
+>>>>>>> origin/aapon-branch
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

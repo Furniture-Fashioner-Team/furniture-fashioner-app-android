@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: db1f49a446f279cc8adb4d42a9bfc43f
-  - enabled: 1
-    path: Assets/Scenes/ARCamera.unity
-    guid: 74a249ed6501cc225834aad76873eb2a
-  - enabled: 0
     path: Assets/Scenes/BlankAR.unity
     guid: 6bdce89659816455b9f906fc62d19910
   m_configObjects:
