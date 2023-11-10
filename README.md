@@ -1,5 +1,5 @@
-# Home Designer App
-The main repository for the development of an AR-driven mobile app for placing and modifying furniture and other 3D objects in the device's camera view. The application aims to offer the user a means to place virtual objects in their preferred scene, for example viewing a piece of furniture in their home for decoration purposes. Right now our focus is on developing the Android version of the application.
+# [REDACTED] App
+The main repository for the development of an AR-driven mobile app for placing and modifying furniture and other 3D objects in the device's camera view. The application aims to offer the user a means to place virtual objects in their preferred scene, for example viewing a piece of furniture in their environment for decoration purposes. Right now our focus is on developing the Android version of the application.
 
 This project is developed using **Unity 3D**, and most of the code is composed of **C#-scripts** to modify assets and objects in Unity's scene view. The naming convention we are using in the code is **CamelCase**. The Augmented Reality features utilize Unity's **AR Foundation framework**. The 3D furniture used in the project is modelled using **Blender**. The app is being developed and tested using several Android devices, including different phones and a tablet.
 
