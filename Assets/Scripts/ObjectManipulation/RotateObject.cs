@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    public ObjectActions objActions; // reference for ObjectActions component
+    private ObjectActions objActions; // reference for ObjectActions component
     private float speed = 0.3f; // rotation speed
     
     private void Start() 

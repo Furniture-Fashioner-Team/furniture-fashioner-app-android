@@ -7,11 +7,13 @@ public class ResizeObject : MonoBehaviour
     private Transform tr;
     private Vector3 origSize;
     private float[] minMax = { 0.1f, 2.0f };
+    private ObjectActions objActions;
 
     private void Awake()
     {
         tr = transform;
         origSize = tr.localScale;
+        objActions = GetComponent<ObjectActions>();
     }
     private void Start()
     {
@@ -20,6 +22,9 @@ public class ResizeObject : MonoBehaviour
     }
     public void Resize(float modifier)
     {
-        tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
+        if (objActions.openMenu == true) 
+        {
+            tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
+        }
     }
 }

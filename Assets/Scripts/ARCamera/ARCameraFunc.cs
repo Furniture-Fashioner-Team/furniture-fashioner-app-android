@@ -39,23 +39,18 @@ class ARCameraFunc : MonoBehaviour
     public static void NewInst(GameObject obj, Vector3 plc, Quaternion rot)
     {
         GameObject inst = Instantiate(obj, plc, rot);
-        BoxCollider bC = inst.AddComponent<BoxCollider>();
         AddComponents(inst);
         DontDestroyOnLoad(inst);
         GlobalARC.aRObjDict[inst.GetInstanceID()] = (obj, inst);
     }
     private static void AddComponents(GameObject obj)
     {
+        BoxCollider bC = obj.AddComponent<BoxCollider>();
+        
         ObjectActions oA = obj.AddComponent<ObjectActions>();
-
         ObjectColor oC = obj.AddComponent<ObjectColor>();
-        oC.objActions = oA;
-
         MoveObject mO = obj.AddComponent<MoveObject>();
-        mO.objActions = oA;
-
         RotateObject rO = obj.AddComponent<RotateObject>();
-        rO.objActions = oA;
 
         ResizeObject rszO = obj.AddComponent<ResizeObject>();
         rszO.slider = GlobalARC.slider;

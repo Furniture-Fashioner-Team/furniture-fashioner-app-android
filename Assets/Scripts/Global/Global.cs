@@ -21,7 +21,7 @@ class Global
         GlobalMenu.spriteImageSize = new Vector2(1.920f * GlobalMenu.imgScaleFact, 1.080f * GlobalMenu.imgScaleFact);
         GlobalARC.arrowLeftSize = new Vector2(dim[0] * 0.0694f, dim[1] * 0.0324f);
         GlobalARC.arrowLeftPlace = new Vector2(dim[0] * -0.45f, dim[1] * 0.48f);
-        GlobalARC.newObjPlace = new Vector3(0, 0, 5);
+        GlobalARC.newObjPlace = new Vector3(0, 0, 3);
     }
     public static Tuple<EventTrigger.Entry, EventTrigger> AddClickListener(GameObject obj)
     {

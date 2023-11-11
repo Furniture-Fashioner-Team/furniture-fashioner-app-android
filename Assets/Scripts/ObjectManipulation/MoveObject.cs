@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    public ObjectActions objActions; // reference for ObjectActions component
-    private float distance = 5; // object's distance from camera (set to static value to keep stable when moving the camera)
+    private ObjectActions objActions; // reference for ObjectActions component
+    private float posZ; // object's z coordinate
     private Vector3 offset = Vector3.zero; // the offset between object and touch position
 
     // converts the screen position (vector2, xy) to world position (vector3, xyz) by adding distance
@@ -14,7 +14,7 @@ public class MoveObject : MonoBehaviour
         // x and y are derived from currentScreenPosition in ObjectActions
         float currentX = objActions.currentScreenPosition.x;
         float currentY = objActions.currentScreenPosition.y;
-        return Camera.main.ScreenToWorldPoint(new Vector3(currentX, currentY, distance));
+        return Camera.main.ScreenToWorldPoint(new Vector3(currentX, currentY, posZ));
     }
 
     private void Start() 
@@ -33,11 +33,14 @@ public class MoveObject : MonoBehaviour
             }
             // move object
             transform.position = getWorldPosition() + offset;
+            
         } 
         else 
         {
             // reset offset
             offset = Vector3.zero;
+            // object's z coordinate is only updated when it's not moving
+            posZ = transform.position.z;
         }
     }
 }

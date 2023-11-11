@@ -7,7 +7,7 @@ using UnityEngine;
 public class ObjectColor : MonoBehaviour
 {
     private Color[] originalColors; // Store the original colors
-    public ObjectActions objActions;
+    private ObjectActions objActions;
     private Material[] materials; // Store all materials of the object
 
     void Start()
