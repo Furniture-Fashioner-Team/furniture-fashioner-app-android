@@ -20,6 +20,7 @@ public class PlaceMarker : MonoBehaviour
     void Update()
     {
         var ray = new Vector2(Screen.width / 2, Screen.height / 2); // ray at center of screen
+        
         // if raycast finds a detected plane, marker is aligned accordingly
         if (raycastManager.Raycast(ray, hitResults, TrackableType.PlaneWithinPolygon)) 
         {
@@ -39,5 +40,6 @@ public class PlaceMarker : MonoBehaviour
         {
             marker.SetActive(false); // marker hidden if planes not detected
         }
+
     }
 }

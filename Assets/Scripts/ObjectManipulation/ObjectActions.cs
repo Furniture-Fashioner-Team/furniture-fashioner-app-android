@@ -45,7 +45,7 @@ public class ObjectActions : MonoBehaviour
         // press until released: activates dragging
         press.performed += _ =>
         {
-            if (isActive())
+            if (IsActive())
             {
                 isDragged = true;
             }
@@ -58,7 +58,7 @@ public class ObjectActions : MonoBehaviour
         // tap: activates an object-specific menu, deactivates when tapped anywhere else
         tap.performed += _ =>   //  refact with ternary?
         {
-            if (isActive())
+            if (IsActive())
             {
                 openMenu = true;
             }
@@ -74,7 +74,7 @@ public class ObjectActions : MonoBehaviour
         // 2nd finger press: activates rotating
         doublePress.performed += _ =>
         {
-            if (isActive())
+            if (IsActive())
             {
                 isRotated = true;
                 isDragged = false;
@@ -85,15 +85,7 @@ public class ObjectActions : MonoBehaviour
             isRotated = false;
         };
     }
-    private void Start()
-    {
-        screenPosition.Enable();
-        axis.Enable();
-        press.Enable();
-        tap.Enable();
-        doublePress.Enable();
-    }
-    public bool isActive()
+    public bool IsActive()
     {
         Ray ray = Camera.main.ScreenPointToRay(currentScreenPosition);
         // raycast for checking if the touch hits an object in the view
