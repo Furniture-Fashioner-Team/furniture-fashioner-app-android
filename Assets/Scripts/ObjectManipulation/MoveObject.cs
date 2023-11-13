@@ -12,7 +12,7 @@ public class MoveObject : MonoBehaviour
     private float floorY;
 
 
-    // converts the screen position (vector2, xy) to world position (vector3, xyz) by adding distance
+    // converts the screen position (vector2, xy) to world position (vector3, xyz) and adds distance
     private Vector3 WorldPosition() 
     { 
         // x and y are derived from currentScreenPosition in ObjectActions
@@ -30,6 +30,13 @@ public class MoveObject : MonoBehaviour
 
     private void Update() 
     {
+        // if floor detected, set object's y as floor y (todo: change to only check this when plane detected/changed)
+        if (plane != null) 
+        {
+            floorY = plane.transform.position.y + transform.localScale.y / 2;
+            transform.position = new Vector3(transform.position.x, floorY, transform.position.z);
+        }
+
         if (objActions.isDragged == true) 
         {
             if (objectLog != null) 
@@ -42,10 +49,10 @@ public class MoveObject : MonoBehaviour
                 Vector3 newPos = WorldPosition();
                 if (offset == Vector3.zero) 
                 {
-                    offset = transform.position - new Vector3(newPos.x, Mathf.Max(newPos.y, floorY+transform.localScale.y), newPos.z);
+                    offset = transform.position - newPos;
                 }
-                floorY = plane.transform.position.y;
-                transform.position = new Vector3(newPos.x, Mathf.Max(newPos.y, floorY+transform.localScale.y), newPos.z) + offset; // Mathf.Max returns whichever coordinate is bigger of the two
+                Vector3 finalPos = newPos + offset;
+                transform.position = new Vector3(finalPos.x, floorY, finalPos.z);
             } 
             else 
             {
@@ -55,13 +62,16 @@ public class MoveObject : MonoBehaviour
                 }
                 transform.position = WorldPosition() + offset;
             }
+
             // todo: fix transform.rotation relative to camera
+            // currently when camera is turned drastically while dragging, 
+            // obj moving gets really slow
             
-            /* faces camera but doesn't keep rotation:
+            // faces camera but doesn't keep rotation:
             Vector3 lookAtPos = Camera.main.transform.position;
             lookAtPos.y = transform.position.y;
             transform.LookAt(lookAtPos);
-            */
+            
             
         } 
         else 
