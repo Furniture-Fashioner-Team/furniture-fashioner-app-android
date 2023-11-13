@@ -23,3 +23,5 @@ public class ResizeObject : MonoBehaviour
         tr.localScale = Mathf.Lerp(minMax[0], minMax[1], modifier) * origSize;
     }
 }
+ // Ei siis enää tämmöistä objektiin liitettävää, vaan joku staattisempi toiminto, joka
+ // tarkkailee, että mikä esine valittuna, ja vaikuttaa sitten siihen, maybe...

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 class Menu : MonoBehaviour
@@ -7,13 +8,14 @@ class Menu : MonoBehaviour
     public RectTransform scrollViewContent;
     private Vector2 sprImgPlace;
     public Button toCamera;
-    public GameObject contentPrefabComponent;
+    public GameObject menuPrefab;
 
     private void Awake()
     {
         MenuFunc.ScrollViewSettings(scrollView, scrollViewContent);
-        sprImgPlace = MenuFunc.GetVector2(0.55f, Global.furnitureCount - 1);
+        sprImgPlace = MenuFunc.GetVector2(0.55f, GlobalMenu.furnitureCount - 1);
         MenuFunc.ButtonSettings(toCamera);
+        GlobalMenu.furnitureKey = null;
     }
     private void Start()
     {
@@ -21,15 +23,15 @@ class Menu : MonoBehaviour
     }
     private void AddListItems()
     {
-        foreach (Furniture f in Global.furniture)
+        foreach (Furniture f in GlobalMenu.furniture)
         {
-            GameObject obj = MenuFunc.GetSprImg(sprImgPlace, contentPrefabComponent, f.spr);
+            GameObject obj = MenuFunc.GetSprImg(sprImgPlace, menuPrefab, f.spr);
             int id = f.spr.GetInstanceID();
             obj = Instantiate(obj, scrollViewContent);
             Image img = obj.GetComponent<Image>();
             MenuFunc.AddEventTrigger(obj, id, img);
-            sprImgPlace.y -= Global.spriteImageSize.y * 1.1f;
-            Global.furnitureDict[id] = f.obj;
+            sprImgPlace.y -= GlobalMenu.spriteImageSize.y * 1.1f;
+            GlobalMenu.furnitureDict[id] = f.obj;
         }
     }
 }
@@ -46,8 +48,8 @@ class Menu : MonoBehaviour
     
     In the AddListItems method, a new Image containing the Sprite of the Furniture object is created
     from the Sprite, then cloned and added to the scrollView's content. Finally, also an event listener is
-    added to this cloned new object. After this, the Furniture object from the Global.furniture list is added
-    to the Global.furnitureDict dictionary, so that the unique id of the Sprite object of the Furniture
+    added to this cloned new object. After this, the Furniture object from the GlobalMenu.furniture list is added
+    to the GlobalMenu.furnitureDict dictionary, so that the unique id of the Sprite object of the Furniture
     object becomes the key, and the 3D model of the item of the Furniture object becomes the value. When
     the ToCamera method is called, transition from the Menu scene to the ARCamera scene shall occur.
 */

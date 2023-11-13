@@ -660,7 +660,7 @@ MonoBehaviour:
   scrollView: {fileID: 667632660}
   scrollViewContent: {fileID: 1409953758}
   toCamera: {fileID: 1673137437}
-  contentPrefabComponent: {fileID: 7406066809542162182, guid: 7e5e47dda36433a7190c36f4f7aa7189,
+  menuPrefab: {fileID: 7406066809542162182, guid: 7e5e47dda36433a7190c36f4f7aa7189,
     type: 3}
 --- !u!1 &1673137435
 GameObject:
