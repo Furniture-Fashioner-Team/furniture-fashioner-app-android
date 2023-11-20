@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// !!NOT FINAL!!
+
 public class MoveObject : MonoBehaviour
 {
-    private ObjectActions objActions; // reference for ObjectActions component
+    private ObjectActions objActions;
     private float posZ; // object's z coordinate
-    private Vector3 offset = Vector3.zero; // the offset between object and touch position
-    private TMPro.TMP_Text objectLog; // for testing
+    private float posY = 1; // object's y coordinate (static value)
+    private Vector3 offset = Vector3.zero; // used for moving
+
     private GameObject plane; // floor plane
-    private float floorY;
+    private float floorY; // floor plane's y
 
 
-    // converts the screen position (vector2, xy) to world position (vector3, xyz) and adds distance
+    // converts the screen position (vector2, xy) to world position (vector3, xyz)
     private Vector3 WorldPosition() 
     { 
         // x and y are derived from currentScreenPosition in ObjectActions
@@ -24,36 +27,38 @@ public class MoveObject : MonoBehaviour
     private void Start() 
     {
         objActions = GetComponent<ObjectActions>();
-        objectLog = GameObject.Find("Object Log").GetComponent<TMPro.TMP_Text>();
-        plane = GameObject.Find("Plane");
     }
 
     private void Update() 
     {
-        // if floor detected, set object's y as floor y (todo: change to only check this when plane detected/changed)
-        if (plane != null) 
+        // FINDING THE FLOOR PLANE AND SETTING Y COORDINATE
+        if (plane == null)
         {
-            floorY = plane.transform.position.y + transform.localScale.y / 2;
-            transform.position = new Vector3(transform.position.x, floorY, transform.position.z);
+            GameObject[] planes;
+            planes = GameObject.FindGameObjectsWithTag("floor"); // plane can be found with tag "floor"
+            plane = planes[0];
+            if (planes != null) {
+                floorY = planes[0].transform.position.y + transform.localScale.y / 2; // + half the object's height to put them on top of the floor
+                Debug.Log("floor set");
+            }
         }
 
+        // MOVING THE OBJECT
         if (objActions.isDragged == true) 
         {
-            if (objectLog != null) 
-            {
-                objectLog.text = $"floor Y: {floorY}";
-            }
-            // move object
+            // moving with detected plane:
             if (plane != null) 
             {
-                Vector3 newPos = WorldPosition();
+                Vector3 newPos = WorldPosition(); // screen coordinates to world coordinates
                 if (offset == Vector3.zero) 
                 {
-                    offset = transform.position - newPos;
+                    offset = transform.position - new Vector3(newPos.x, Mathf.Max(newPos.y, floorY), newPos.z); // Mathf.Max returns whichever coordinate is bigger of the two
                 }
-                Vector3 finalPos = newPos + offset;
-                transform.position = new Vector3(finalPos.x, floorY, finalPos.z);
+                floorY = plane.transform.position.y;
+                Debug.Log($"{newPos.y}, {floorY}");
+                transform.position = new Vector3(newPos.x, Mathf.Max(newPos.y, floorY), newPos.z) + offset;
             } 
+            // moving without detected plane (this is from the original moving script):
             else 
             {
                 if (offset == Vector3.zero) 
@@ -62,23 +67,12 @@ public class MoveObject : MonoBehaviour
                 }
                 transform.position = WorldPosition() + offset;
             }
-
-            // todo: fix transform.rotation relative to camera
-            // currently when camera is turned drastically while dragging, 
-            // obj moving gets really slow
-            
-            // faces camera but doesn't keep rotation:
-            Vector3 lookAtPos = Camera.main.transform.position;
-            lookAtPos.y = transform.position.y;
-            transform.LookAt(lookAtPos);
-            
-            
         } 
         else 
         {
             // reset offset
             offset = Vector3.zero;
-            // object's z coordinate is only updated when it's not moving
+            // z is currently only updated when obj is not moving
             posZ = transform.position.z;
         }
     }
