@@ -23,6 +23,7 @@ class Global
         GlobalARC.iconSize = new Vector2(dim[0] * 0.1042f, dim[1] * 0.0485f);
         GlobalARC.arrowLeftPlace = new Vector2(dim[0] * -0.434f, dim[1] * 0.474f);
         GlobalARC.trashCanPlace = new Vector2(dim[0] * 0.399f, dim[1] * -0.461f);
+        GlobalARC.duplicatePlace = new Vector2(dim[0] * -0.399f, dim[1] * -0.461f);
         GlobalARC.newObjPlace = new Vector3(0, 0, 5);
     }
     public static void UICompSizeAndPlace(GameObject obj, Vector2 size, Vector2 place)

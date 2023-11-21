@@ -8,11 +8,13 @@ public class UIController : MonoBehaviour
 {
     public Slider slider; // reference to the slider
     public Image trashCan;
+    public Image duplicate;
     
     void Start()
     {
         slider.gameObject.SetActive(false); // slider hidden at first
         trashCan.gameObject.SetActive(false);
+        duplicate.gameObject.SetActive(false);
     }
     public static ObjectActions GetActiveObject()
     {
@@ -34,11 +36,13 @@ public class UIController : MonoBehaviour
         {
             slider.gameObject.SetActive(true);
             trashCan.gameObject.SetActive(true);
+            duplicate.gameObject.SetActive(true);
         } 
         else 
         {
             slider.gameObject.SetActive(false);
             trashCan.gameObject.SetActive(false);
+            duplicate.gameObject.SetActive(false);
         }
     }
 }

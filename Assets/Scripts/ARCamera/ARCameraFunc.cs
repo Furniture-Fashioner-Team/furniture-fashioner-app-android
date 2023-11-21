@@ -31,6 +31,20 @@ class ARCameraFunc : MonoBehaviour
         });
         t.Item2.triggers.Add(t.Item1);
     }
+    public static void DuplicateSettings(GameObject obj)
+    {
+        Global.UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.duplicatePlace);
+        Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
+         t.Item1.callback.AddListener((_) =>
+        {
+            obj = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey].Item2;
+            Vector3 place = obj.transform.position;
+            Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
+            GameObject inst = Instantiate(obj, newPlace, obj.transform.localRotation);
+            GlobalARC.aRObjDict[inst.GetInstanceID()] = (obj, inst);
+        });
+        t.Item2.triggers.Add(t.Item1);
+    }
     public static void OldARObjects()
     {
         if (GlobalARC.aRObjDict.Count > 0)
