@@ -8,7 +8,6 @@ class ARCamera : MonoBehaviour
     public GameObject trashCan;
     public GameObject duplicate;
     public GameObject aRCameraPrefab;
-    public Slider slider;
 
     private void Awake()
     {
@@ -19,6 +18,6 @@ class ARCamera : MonoBehaviour
     private void Start()
     {
         ARCameraFunc.OldARObjects();
-        ARCameraFunc.NewObject(aRCameraPrefab, slider);
+        ARCameraFunc.NewObject(aRCameraPrefab);
     }
 }

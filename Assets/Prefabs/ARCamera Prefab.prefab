@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8898586226868694222}
   - component: {fileID: -3322123885708585915}
   - component: {fileID: -5633751190750508770}
+  - component: {fileID: -6316571012842785604}
   m_Layer: 0
   m_Name: ARCamera Prefab
   m_TagString: Untagged
@@ -140,3 +141,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c367e71ff7241aeb58a3f5dcf5c496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6316571012842785604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200994060244172148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 0}

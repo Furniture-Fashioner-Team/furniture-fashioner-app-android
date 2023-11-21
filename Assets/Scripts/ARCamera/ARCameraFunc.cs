@@ -37,12 +37,12 @@ class ARCameraFunc : MonoBehaviour
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
          t.Item1.callback.AddListener((_) =>
         {
-            obj = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
-            Vector3 place = obj.transform.position;
+            GameObject inst = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
+            Vector3 place = inst.transform.position;
             Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
-            GameObject inst = Instantiate(obj, newPlace, obj.transform.localRotation);
-            DontDestroyOnLoad(inst);
-            GlobalARC.aRObjDict[inst.GetInstanceID()] = inst;
+            GameObject dup = Instantiate(inst, newPlace, inst.transform.localRotation);
+            DontDestroyOnLoad(dup);
+            GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
         });
         t.Item2.triggers.Add(t.Item1);
     }
@@ -53,17 +53,17 @@ class ARCameraFunc : MonoBehaviour
             GlobalARC.aRObjDict.Values.ToList().ForEach((inst) => inst.SetActive(true));
         }
     }
-    public static void NewObject(GameObject prefab, Slider slider)
+    public static void NewObject(GameObject prefab)
     {
         if (GlobalMenu.furnitureKey != null)
         {
             GameObject obj = GlobalMenu.furnitureDict[(int)GlobalMenu.furnitureKey];
             NewInst(obj, GlobalARC.newObjPlace, obj.transform.localRotation,
-                obj.transform.localScale, prefab, slider);
+                obj.transform.localScale, prefab);
         }
     }
-    public static void NewInst(GameObject obj, Vector3 plc, Quaternion rt,
-        Vector3 scl, GameObject prefab, Slider sld)
+    private static void NewInst(GameObject obj, Vector3 plc, Quaternion rt,
+        Vector3 scl, GameObject prefab)
     {
         GameObject inst = Instantiate(prefab, plc, rt);
         inst.transform.localScale = scl;
@@ -74,8 +74,6 @@ class ARCameraFunc : MonoBehaviour
         iMF.sharedMesh = oMF.sharedMesh;
         iMR.sharedMaterials = oMR.sharedMaterials;
         BoxCollider bC = inst.AddComponent<BoxCollider>();
-        // ResizeObject rsO = inst.AddComponent<ResizeObject>();       // Tämä pitää ehkä siirtää globaalimalle tasolle,
-        // rsO.slider = sld;                                           // jotta toimii aina aktiiviselle esineelle!
         DontDestroyOnLoad(inst);
         GlobalARC.aRObjDict[inst.GetInstanceID()] = inst;
     }
