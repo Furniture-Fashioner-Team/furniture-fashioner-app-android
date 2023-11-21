@@ -14,7 +14,7 @@ class ARCameraFunc : MonoBehaviour
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
         t.Item1.callback.AddListener((_) =>
         {
-            GlobalARC.aRObjDict.Values.ToList().ForEach((t) => t.inst.SetActive(false));
+            GlobalARC.aRObjDict.Values.ToList().ForEach((inst) => inst.SetActive(false));
             SceneManager.LoadScene(Global.sceneNames[0]);
         });
         t.Item2.triggers.Add(t.Item1);
@@ -25,7 +25,7 @@ class ARCameraFunc : MonoBehaviour
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
          t.Item1.callback.AddListener((_) =>
         {
-            Destroy(GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey].Item2);
+            Destroy(GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey]);
             GlobalARC.aRObjDict.Remove((int)GlobalARC.aRObjKey);
             GlobalARC.aRObjKey = null;
         });
@@ -37,11 +37,12 @@ class ARCameraFunc : MonoBehaviour
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
          t.Item1.callback.AddListener((_) =>
         {
-            obj = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey].Item2;
+            obj = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
             Vector3 place = obj.transform.position;
             Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
             GameObject inst = Instantiate(obj, newPlace, obj.transform.localRotation);
-            GlobalARC.aRObjDict[inst.GetInstanceID()] = (obj, inst);
+            DontDestroyOnLoad(inst);
+            GlobalARC.aRObjDict[inst.GetInstanceID()] = inst;
         });
         t.Item2.triggers.Add(t.Item1);
     }
@@ -49,7 +50,7 @@ class ARCameraFunc : MonoBehaviour
     {
         if (GlobalARC.aRObjDict.Count > 0)
         {
-            GlobalARC.aRObjDict.Values.ToList().ForEach((t) => t.inst.SetActive(true));
+            GlobalARC.aRObjDict.Values.ToList().ForEach((inst) => inst.SetActive(true));
         }
     }
     public static void NewObject(GameObject prefab, Slider slider)
@@ -66,16 +67,16 @@ class ARCameraFunc : MonoBehaviour
     {
         GameObject inst = Instantiate(prefab, plc, rt);
         inst.transform.localScale = scl;
-        MeshFilter pMF = inst.GetComponent<MeshFilter>();
-        MeshRenderer pMR = inst.GetComponent<MeshRenderer>();
+        MeshFilter iMF = inst.GetComponent<MeshFilter>();
+        MeshRenderer iMR = inst.GetComponent<MeshRenderer>();
         MeshFilter oMF = obj.GetComponent<MeshFilter>();
         MeshRenderer oMR = obj.GetComponent<MeshRenderer>();
-        pMF.sharedMesh = oMF.sharedMesh;
-        pMR.sharedMaterials = oMR.sharedMaterials;
+        iMF.sharedMesh = oMF.sharedMesh;
+        iMR.sharedMaterials = oMR.sharedMaterials;
         BoxCollider bC = inst.AddComponent<BoxCollider>();
-        ResizeObject rsO = inst.AddComponent<ResizeObject>();       // Tämä pitää ehkä siirtää globaalimalle tasolle,
-        rsO.slider = sld;                                           // jotta toimii aina aktiiviselle esineelle!
+        // ResizeObject rsO = inst.AddComponent<ResizeObject>();       // Tämä pitää ehkä siirtää globaalimalle tasolle,
+        // rsO.slider = sld;                                           // jotta toimii aina aktiiviselle esineelle!
         DontDestroyOnLoad(inst);
-        GlobalARC.aRObjDict[inst.GetInstanceID()] = (obj, inst);
+        GlobalARC.aRObjDict[inst.GetInstanceID()] = inst;
     }
 }

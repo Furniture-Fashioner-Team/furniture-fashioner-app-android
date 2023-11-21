@@ -10,7 +10,7 @@ class GlobalARC
     public static Vector2 trashCanPlace;
     public static Vector2 duplicatePlace;
     public static Vector3 newObjPlace;
-    public static Dictionary<int, (GameObject obj, GameObject inst)> aRObjDict = new();
+    public static Dictionary<int, GameObject> aRObjDict = new();
     public static int? aRObjKey;
 }
 
