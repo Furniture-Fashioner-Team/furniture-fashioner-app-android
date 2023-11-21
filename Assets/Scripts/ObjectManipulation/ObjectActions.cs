@@ -29,44 +29,19 @@ public class ObjectActions : MonoBehaviour
         doublePress = new InputAction(type: InputActionType.Button, binding: "<Touchscreen>/touch1/press");
 
         // touch position
-        screenPosition.performed += context =>
-        {
-            currentScreenPosition = context.ReadValue<Vector2>();
-        };
+        screenPosition.performed += context => currentScreenPosition = context.ReadValue<Vector2>();
         // axis
-        axis.performed += context =>
-        {
-            rotation = context.ReadValue<Vector2>();
-        };
+        axis.performed += context => rotation = context.ReadValue<Vector2>();
         // press until released: activates dragging
-        press.performed += _ =>
-        {
-            if (isActive())
-            {
-                isDragged = true;
-            }
-        };
+        press.performed += _ => isDragged = isActive();
         press.canceled += _ =>
         {
             isDragged = false;
             isRotated = false;
         };
         // tap: activates an object-specific menu, deactivates when tapped anywhere else
-        tap.performed += _ =>   //  refact with ternary?
-        {
-            if (isActive())
-            {
-                openMenu = true;
-            }
-            else
-            {
-                openMenu = false;
-            }
-        };
-        tap.canceled += _ =>
-        {
-            openMenu = false;
-        };
+        tap.performed += _ => openMenu = isActive();
+        tap.canceled += _ => openMenu = false;
         // 2nd finger press: activates rotating
         doublePress.performed += _ =>
         {
@@ -76,10 +51,7 @@ public class ObjectActions : MonoBehaviour
                 isDragged = false;
             }
         };
-        doublePress.canceled += _ =>
-        {
-            isRotated = false;
-        };
+        doublePress.canceled += _ => isRotated = false;
     }
     private void Start()
     {
