@@ -10,7 +10,7 @@ class ARCameraFunc : MonoBehaviour
 {
     public static void ArrowLeftSettings(GameObject obj)
     {
-        Global.UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.arrowLeftPlace);
+        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.arrowLeftPlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
         t.Item1.callback.AddListener((_) =>
         {
@@ -21,7 +21,7 @@ class ARCameraFunc : MonoBehaviour
     }
     public static void TrashCanSettings(GameObject obj)
     {
-        Global.UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.trashCanPlace);
+        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.trashCanPlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
          t.Item1.callback.AddListener((_) =>
         {
@@ -33,7 +33,7 @@ class ARCameraFunc : MonoBehaviour
     }
     public static void DuplicateSettings(GameObject obj)
     {
-        Global.UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.duplicatePlace);
+        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.duplicatePlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
          t.Item1.callback.AddListener((_) =>
         {
@@ -45,6 +45,12 @@ class ARCameraFunc : MonoBehaviour
             GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
         });
         t.Item2.triggers.Add(t.Item1);
+    }
+    public static void UICompSizeAndPlace(GameObject obj, Vector2 size, Vector2 place)
+    {
+        RectTransform rT = obj.GetComponent<RectTransform>();
+        rT.sizeDelta = size;
+        rT.anchoredPosition = place;
     }
     public static void OldARObjects()
     {

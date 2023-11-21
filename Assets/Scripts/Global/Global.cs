@@ -26,12 +26,6 @@ class Global
         GlobalARC.duplicatePlace = new Vector2(dim[0] * -0.399f, dim[1] * -0.461f);
         GlobalARC.newObjPlace = new Vector3(0, 0, 5);
     }
-    public static void UICompSizeAndPlace(GameObject obj, Vector2 size, Vector2 place)
-    {
-        RectTransform rT = obj.GetComponent<RectTransform>();
-        rT.sizeDelta = size;
-        rT.anchoredPosition = place;
-    }
     public static Tuple<EventTrigger.Entry, EventTrigger> AddClickListener(GameObject obj)
     {
         EventTrigger eT = obj.AddComponent<EventTrigger>();
@@ -54,5 +48,6 @@ class Global
     to a visual object menu.
 
     This script also sets values of the other global-level variables that can be used throughout
-    the application!
+    the application! On the other hand, the 'AddClickListener' function of this script is used
+    to add event listeners to both the Menu sprite images and the ARCamera user interface icons.
 */
