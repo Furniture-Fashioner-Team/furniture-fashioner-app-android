@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     public Image trashCan;
     public Image duplicate;
     
-    void Start()
+    private void Start()
     {
         trashCan.gameObject.SetActive(false);
         duplicate.gameObject.SetActive(false);
@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
         // goes through all the ObjectActions components and returns the one with openMenu set as true or null
         return FindObjectsOfType<ObjectActions>().FirstOrDefault(comp => comp.openMenu);
     }
-    void Update()
+    private void Update()
     {
         // shows/hides the size slider according to openMenu value in the objectActions script
         if (GetActiveObjectActions() != null) 

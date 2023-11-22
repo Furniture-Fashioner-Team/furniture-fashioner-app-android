@@ -1,50 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-// For testing: changes the object's color according to performed action
-
+// For testing and ui feedback: changes the object's color according to performed action
 public class ObjectColor : MonoBehaviour
 {
-    private Color[] originalColors; // Store the original colors
+    // ObjectActions component reference of a certain object
     private ObjectActions objActions;
-    private Material[] materials; // Store all materials of the object
+    // Store all materials of the object
+    private List<Material> materials;
+    // Store the original colors
+    private Dictionary<int, Color> originalColorsDict = new();
+    // a nullable color indicator variable
+    private Color? indicator;
 
-    void Start()
+    private void Start()
     {
         objActions = GetComponent<ObjectActions>();
         // Get all materials attached to the object
-        materials = GetComponent<MeshRenderer>().materials;
+        materials = GetComponent<MeshRenderer>().materials.ToList();
         // Store the original colors
-        originalColors = new Color[materials.Length];
-        for (int i = 0; i < materials.Length; i++)
-        {
-            originalColors[i] = materials[i].color;
-        }
+        materials.ForEach(m => originalColorsDict[materials.IndexOf(m)] = m.color);
     }
-
-    void Update()
+    private void Update()
     {
-        for (int i = 0; i < materials.Length; i++)
+        indicator = objActions.isDragged ? Color.blue : objActions.isRotated ? Color.green :
+            objActions.openMenu ? Color.yellow : null;
+
+        if (indicator != null)
         {
-            // Set the color according to action
-            if (objActions.isDragged)
-            {
-                materials[i].color = Color.blue;
-            }
-            else if (objActions.isRotated)
-            {
-                materials[i].color = Color.green;
-            }
-            else if (objActions.openMenu)
-            {
-                materials[i].color = Color.yellow;
-            }
-            else
-            {
-                // Restore the original color
-                materials[i].color = originalColors[i];
-            }
+            // Change the action indicator color
+            materials.ForEach(m => m.color = (Color)indicator);
+        }
+        else
+        {
+            // Restore the original colors
+            originalColorsDict.Keys.ToList().ForEach(i => materials[i].color = originalColorsDict[i]);
         }
     }
 }
