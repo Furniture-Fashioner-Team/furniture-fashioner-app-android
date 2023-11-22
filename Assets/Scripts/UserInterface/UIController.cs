@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-// controls the slider's visibility
+// controls the ui components visibility
 public class UIController : MonoBehaviour
 {
     public Image trashCan;
@@ -14,23 +15,15 @@ public class UIController : MonoBehaviour
         trashCan.gameObject.SetActive(false);
         duplicate.gameObject.SetActive(false);
     }
-    public static ObjectActions GetActiveObject()
+    public static ObjectActions GetActiveObjectActions()
     {
-        // goes through all objects and returns the one with openMenu set as true
-        ObjectActions[] objectActionsArray = FindObjectsOfType<ObjectActions>();
-        foreach (ObjectActions objectActions in objectActionsArray)
-        {
-            if (objectActions.openMenu == true)
-            {
-                return objectActions;
-            }
-        }
-        return null; // if no object found
+        // goes through all the ObjectActions components and returns the one with openMenu set as true or null
+        return FindObjectsOfType<ObjectActions>().FirstOrDefault(comp => comp.openMenu);
     }
     void Update()
     {
         // shows/hides the size slider according to openMenu value in the objectActions script
-        if (GetActiveObject() != null) 
+        if (GetActiveObjectActions() != null) 
         {
             trashCan.gameObject.SetActive(true);
             duplicate.gameObject.SetActive(true);

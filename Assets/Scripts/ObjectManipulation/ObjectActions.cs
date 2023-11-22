@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,9 +16,9 @@ public class ObjectActions : MonoBehaviour
     private InputAction doublePress;
     public Vector2 currentScreenPosition;
     public Vector2 rotation;
+    public bool openMenu = false;
     public bool isDragged = false;
     public bool isRotated = false;
-    public bool openMenu = false;
 
     // setup tasks
     private void Awake()
@@ -32,21 +33,25 @@ public class ObjectActions : MonoBehaviour
         screenPosition.performed += context => currentScreenPosition = context.ReadValue<Vector2>();
         // axis
         axis.performed += context => rotation = context.ReadValue<Vector2>();
-        // press until released: activates dragging
-        press.performed += _ => isDragged = isActive();
-        press.canceled += _ =>
-        {
-            isDragged = false;
-            isRotated = false;
-        };
         // tap: activates an object-specific menu, deactivates when tapped anywhere else
         tap.performed += _ => openMenu = isActive();
-        tap.canceled += _ => openMenu = false;
+        // press until released: activates dragging
+        press.performed += _ =>
+        {
+            if (isActive())
+            {
+                ResetOpenMenuValues();
+                isDragged = true;
+                isRotated = false;
+            }
+        };
+        press.canceled += _ => isDragged = false;
         // 2nd finger press: activates rotating
         doublePress.performed += _ =>
         {
             if (isActive())
             {
+                ResetOpenMenuValues();
                 isRotated = true;
                 isDragged = false;
             }
@@ -79,6 +84,10 @@ public class ObjectActions : MonoBehaviour
             returned, so that the other scripts know if their parent object is selected
         */
         return active;
+    }
+    private void ResetOpenMenuValues()
+    {
+        FindObjectsOfType<ObjectActions>().ToList().ForEach(comp => comp.openMenu = false);
     }
     private void OnDestroy()
     {
