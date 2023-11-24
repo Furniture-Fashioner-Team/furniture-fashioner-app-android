@@ -102,9 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScreenPosition: {x: 0, y: 0}
   rotation: {x: 0, y: 0}
+  openMenu: 0
   isDragged: 0
   isRotated: 0
-  openMenu: 0
 --- !u!114 &-8898586226868694222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,4 +153,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9600672238ed7cf4e9298121e104aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}

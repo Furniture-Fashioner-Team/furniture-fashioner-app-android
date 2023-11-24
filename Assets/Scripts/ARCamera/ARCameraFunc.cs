@@ -23,27 +23,39 @@ class ARCameraFunc : MonoBehaviour
     {
         UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.trashCanPlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
-         t.Item1.callback.AddListener((_) =>
-        {
-            Destroy(GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey]);
-            GlobalARC.aRObjDict.Remove((int)GlobalARC.aRObjKey);
-            GlobalARC.aRObjKey = null;
-        });
+        t.Item1.callback.AddListener((_) =>
+       {
+           Destroy(GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey]);
+           GlobalARC.aRObjDict.Remove((int)GlobalARC.aRObjKey);
+           GlobalARC.aRObjKey = null;
+
+           // logic for setting the main camera's audio source's clip to "opo.mp3" before playing it
+           AudioClip deleteAudioClip = Resources.Load<AudioClip>("Sounds/opo");
+           AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
+           audioSource.clip = deleteAudioClip;
+           audioSource.Play();
+       });
         t.Item2.triggers.Add(t.Item1);
     }
     public static void DuplicateSettings(GameObject obj)
     {
         UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.duplicatePlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
-         t.Item1.callback.AddListener((_) =>
-        {
-            GameObject inst = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
-            Vector3 place = inst.transform.position;
-            Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
-            GameObject dup = Instantiate(inst, newPlace, inst.transform.localRotation);
-            DontDestroyOnLoad(dup);
-            GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
-        });
+        t.Item1.callback.AddListener((_) =>
+       {
+           GameObject inst = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
+           Vector3 place = inst.transform.position;
+           Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
+           GameObject dup = Instantiate(inst, newPlace, inst.transform.localRotation);
+           DontDestroyOnLoad(dup);
+           GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
+
+           // logic for setting the main camera's audio source's clip to "pop.mp3" before playing it
+           AudioClip duplicateAudioClip = Resources.Load<AudioClip>("Sounds/pop");
+           AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
+           audioSource.clip = duplicateAudioClip;
+           audioSource.Play();
+       });
         t.Item2.triggers.Add(t.Item1);
     }
     public static void UICompSizeAndPlace(GameObject obj, Vector2 size, Vector2 place)

@@ -40,6 +40,12 @@ public class ObjectActions : MonoBehaviour
         {
             if (isActive())
             {
+                // logic for setting main camera's audio source's clip to select.mp3 before playing it
+                AudioClip selectAudioClip = Resources.Load<AudioClip>("Sounds/select");
+                AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
+                audioSource.clip = selectAudioClip;
+                audioSource.Play();
+
                 ResetOpenMenuValues();
                 isDragged = true;
                 isRotated = false;
