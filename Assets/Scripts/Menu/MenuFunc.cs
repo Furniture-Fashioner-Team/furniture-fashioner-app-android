@@ -19,7 +19,7 @@ class MenuFunc
         rT.sizeDelta = GlobalMenu.toCameraSize;
         rT.anchoredPosition = GlobalMenu.toCameraPlace;
         rT.GetComponentInChildren<TextMeshProUGUI>().fontSize = GlobalMenu.toCameraFontSize;
-        b.onClick.AddListener(() => SceneManager.LoadScene(Global.sceneNames[1]));
+        b.onClick.AddListener(() => SceneManager.LoadScene(Global.sceneNames[0]));
     }
     public static Vector2 GetVector2(float mod, int n)
     {

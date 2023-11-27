@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 class ARCameraFunc : MonoBehaviour
 {
-    public static void ArrowLeftSettings(GameObject obj)
+    public static void MenuIconSettings(GameObject obj)
     {
-        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.arrowLeftPlace);
+        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.menuIconPlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
         t.Item1.callback.AddListener((_) =>
         {
             GlobalARC.aRObjDict.Values.ToList().ForEach((inst) => inst.SetActive(false));
-            SceneManager.LoadScene(Global.sceneNames[0]);
+            SceneManager.LoadScene(Global.sceneNames[1]);
         });
         t.Item2.triggers.Add(t.Item1);
     }
@@ -81,6 +81,7 @@ class ARCameraFunc : MonoBehaviour
     private static void NewInst(GameObject obj, Vector3 plc, Quaternion rt,
         Vector3 scl, GameObject prefab)
     {
+        plc = new Vector3(plc.x, plc.y + 0.01f*obj.transform.localScale.y/2, plc.z);
         GameObject inst = Instantiate(prefab, plc, rt);
         inst.transform.localScale = scl;
         MeshFilter iMF = inst.GetComponent<MeshFilter>();

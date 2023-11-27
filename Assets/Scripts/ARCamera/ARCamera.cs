@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 class ARCamera : MonoBehaviour
 {
-    public GameObject arrowLeft;
+    public GameObject menuIcon;
     public GameObject trashCan;
     public GameObject duplicate;
     public GameObject aRCameraPrefab;
 
     private void Awake()
     {
-        ARCameraFunc.ArrowLeftSettings(arrowLeft);
+        ARCameraFunc.MenuIconSettings(menuIcon);
         ARCameraFunc.TrashCanSettings(trashCan);
         ARCameraFunc.DuplicateSettings(duplicate);
     }

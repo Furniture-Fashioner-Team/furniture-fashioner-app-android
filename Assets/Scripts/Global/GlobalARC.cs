@@ -6,7 +6,7 @@ using UnityEngine.UI;
 class GlobalARC
 {
     public static Vector2 iconSize;
-    public static Vector2 arrowLeftPlace;
+    public static Vector2 menuIconPlace;
     public static Vector2 trashCanPlace;
     public static Vector2 duplicatePlace;
     public static Vector3 newObjPlace;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 class Global
 {
-    public static string[] sceneNames = { "Menu", "ARCamera" };
+    public static string[] sceneNames = { "ARCamera", "Menu" };
     public static int[] dim = { Screen.width, Screen.height };
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -21,7 +21,7 @@ class Global
         GlobalMenu.imgScaleFact = GlobalMenu.scrollViewSize.y * 0.22f;
         GlobalMenu.spriteImageSize = new Vector2(1.920f * GlobalMenu.imgScaleFact, 1.080f * GlobalMenu.imgScaleFact);
         GlobalARC.iconSize = new Vector2(dim[0] * 0.1042f, dim[1] * 0.0485f);
-        GlobalARC.arrowLeftPlace = new Vector2(dim[0] * -0.434f, dim[1] * 0.474f);
+        GlobalARC.menuIconPlace = new Vector2(dim[0] * -0.434f, dim[1] * 0.474f);
         GlobalARC.trashCanPlace = new Vector2(dim[0] * 0.399f, dim[1] * -0.461f);
         GlobalARC.duplicatePlace = new Vector2(dim[0] * -0.399f, dim[1] * -0.461f);
         GlobalARC.newObjPlace = new Vector3(0, 0, 3);
