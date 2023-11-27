@@ -29,7 +29,6 @@ class ARCameraFunc : MonoBehaviour
            GlobalARC.aRObjDict.Remove((int)GlobalARC.aRObjKey);
            GlobalARC.aRObjKey = null;
 
-           // logic for setting the main camera's audio source's clip to "opo.mp3" before playing it
            AudioClip deleteAudioClip = Resources.Load<AudioClip>("Sounds/opo");
            AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
            audioSource.clip = deleteAudioClip;
@@ -50,7 +49,6 @@ class ARCameraFunc : MonoBehaviour
            DontDestroyOnLoad(dup);
            GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
 
-           // logic for setting the main camera's audio source's clip to "pop.mp3" before playing it
            AudioClip duplicateAudioClip = Resources.Load<AudioClip>("Sounds/pop");
            AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
            audioSource.clip = duplicateAudioClip;
