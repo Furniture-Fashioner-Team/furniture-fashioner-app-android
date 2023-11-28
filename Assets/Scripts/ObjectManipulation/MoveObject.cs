@@ -2,22 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Handles object moving on xz axis (horizontally). 
+Object's y position comes from initialization. */
+
 public class MoveObject : MonoBehaviour
 {
-    private ObjectActions objActions; // reference for ObjectActions component
-    private float distance = 5; // object's distance from camera (set to static value to keep stable when moving the camera)
-    private Vector3 offset = Vector3.zero; // the offset between object and touch position
+    private ObjectActions objActions;
+    private float posY;
+    private Vector3 offset = Vector3.zero; // the offset between the object's original place and destination
 
-    // converts the screen position (vector2, xy) to world position (vector3, xyz) by adding distance
-    private Vector3 getWorldPosition() 
+    // turn screen touch coordinates (xy) to world coordinates (xyz)
+    private Vector3 WorldPosition()
     { 
-        // x and y are derived from currentScreenPosition in ObjectActions
-        float currentX = objActions.currentScreenPosition.x;
-        float currentY = objActions.currentScreenPosition.y;
-        return Camera.main.ScreenToWorldPoint(new Vector3(currentX, currentY, distance));
+        float screenPosX = objActions.currentScreenPosition.x;
+        float screenPosY = objActions.currentScreenPosition.y;
+
+        // screen y is converted to world z, and world y is static
+        float convertedZ = Mathf.Lerp(0, 3.0f, screenPosY / Screen.height); // touch at bottom of screen: z = 0m, top of screen: z = 3.0m
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPosX, 0, convertedZ));
+        return new Vector3(worldPos.x, posY, worldPos.z);
     }
 
-    private void Start() 
+    private void Start()
     {
         objActions = GetComponent<ObjectActions>();
     }
@@ -29,10 +35,10 @@ public class MoveObject : MonoBehaviour
             if (offset == Vector3.zero) 
             {
                 // calculate offset
-                offset = transform.position - getWorldPosition();
+                offset = transform.position - WorldPosition();
             }
             // move object
-            transform.position = getWorldPosition() + offset;
+            transform.position = WorldPosition() + offset;
         } 
         else 
         {

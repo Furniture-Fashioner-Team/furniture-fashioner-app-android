@@ -1,25 +1,25 @@
 ManifestFileVersion: 0
-CRC: 2726226361
+CRC: 497844666
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e61218fda20470150f6288f8f71b1eb3
+    Hash: ba62f17a9177dedbb9d32347a775c53e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2612ac43db082a73502ee80f2eceb73f
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e61218fda20470150f6288f8f71b1eb3
+    Hash: ba62f17a9177dedbb9d32347a775c53e
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/FakeDatabase/Thumbs/lavitta.png
-- Assets/FakeDatabase/Thumbs/ikea-hyllykko.png
-- Assets/FakeDatabase/Thumbs/palli.png
-- Assets/FakeDatabase/Thumbs/poyta.png
-- Assets/FakeDatabase/Thumbs/jakkara.png
-- Assets/FakeDatabase/Thumbs/soffa.png
+- Assets/FakeDatabase/Thumbnails/lavitta.png
+- Assets/FakeDatabase/Thumbnails/ikea-hyllykko.png
+- Assets/FakeDatabase/Thumbnails/palli.png
+- Assets/FakeDatabase/Thumbnails/poyta.png
+- Assets/FakeDatabase/Thumbnails/jakkara.png
+- Assets/FakeDatabase/Thumbnails/soffa.png
 Dependencies: []

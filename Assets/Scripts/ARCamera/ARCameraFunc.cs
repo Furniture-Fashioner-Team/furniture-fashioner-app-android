@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 class ARCameraFunc : MonoBehaviour
 {
-    public static void ArrowLeftSettings(GameObject obj)
+    public static void MenuIconSettings(GameObject obj)
     {
-        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.arrowLeftPlace);
+        UICompSizeAndPlace(obj, GlobalARC.iconSize, GlobalARC.menuIconPlace);
         Tuple<EventTrigger.Entry, EventTrigger> t = Global.AddClickListener(obj);
         t.Item1.callback.AddListener((_) =>
         {
             GlobalARC.aRObjDict.Values.ToList().ForEach((inst) => inst.SetActive(false));
-            SceneManager.LoadScene(Global.sceneNames[0]);
+            SceneManager.LoadScene(Global.sceneNames[1]);
         });
         t.Item2.triggers.Add(t.Item1);
     }
@@ -29,7 +29,6 @@ class ARCameraFunc : MonoBehaviour
            GlobalARC.aRObjDict.Remove((int)GlobalARC.aRObjKey);
            GlobalARC.aRObjKey = null;
 
-           // logic for setting the main camera's audio source's clip to "opo.mp3" before playing it
            AudioClip deleteAudioClip = Resources.Load<AudioClip>("Sounds/opo");
            AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
            audioSource.clip = deleteAudioClip;
@@ -45,12 +44,11 @@ class ARCameraFunc : MonoBehaviour
        {
            GameObject inst = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
            Vector3 place = inst.transform.position;
-           Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
+           Vector3 newPlace = new Vector3(place.x - 0.2f, place.y, place.z);
            GameObject dup = Instantiate(inst, newPlace, inst.transform.localRotation);
            DontDestroyOnLoad(dup);
            GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
 
-           // logic for setting the main camera's audio source's clip to "pop.mp3" before playing it
            AudioClip duplicateAudioClip = Resources.Load<AudioClip>("Sounds/pop");
            AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
            audioSource.clip = duplicateAudioClip;
@@ -83,6 +81,7 @@ class ARCameraFunc : MonoBehaviour
     private static void NewInst(GameObject obj, Vector3 plc, Quaternion rt,
         Vector3 scl, GameObject prefab)
     {
+        plc = new Vector3(plc.x, plc.y + 0.01f*obj.transform.localScale.y/2, plc.z);
         GameObject inst = Instantiate(prefab, plc, rt);
         inst.transform.localScale = scl;
         MeshFilter iMF = inst.GetComponent<MeshFilter>();
