@@ -44,7 +44,7 @@ class ARCameraFunc : MonoBehaviour
        {
            GameObject inst = GlobalARC.aRObjDict[(int)GlobalARC.aRObjKey];
            Vector3 place = inst.transform.position;
-           Vector3 newPlace = new Vector3(place.x - 0.2f, place.y - 0.2f, place.z);
+           Vector3 newPlace = new Vector3(place.x - 0.2f, place.y, place.z);
            GameObject dup = Instantiate(inst, newPlace, inst.transform.localRotation);
            DontDestroyOnLoad(dup);
            GlobalARC.aRObjDict[dup.GetInstanceID()] = dup;
