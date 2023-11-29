@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public Image menuIcon;
     public Image trashCan;
     public Image duplicate;
+    public GameObject loadingText;
     
     private void Start()
     {
@@ -43,10 +44,12 @@ public class UIController : MonoBehaviour
         if (GetMarkerVisibility() == true)
         {
             menuIcon.gameObject.SetActive(true);
+            loadingText.gameObject.SetActive(false);
         }
         else
         {
             menuIcon.gameObject.SetActive(false);
+            loadingText.gameObject.SetActive(true);
         }
 
         // delete and duplicate icons
