@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    private ObjectActions objActions; // reference for ObjectActions component
-    private float speed = 0.3f; // rotation speed
+    // reference for ObjectActions component
+    private ObjectActions objActions;
+    // rotation speed
+    private float speed = 0.3f;
     
     private void Start() 
     {
@@ -18,7 +20,8 @@ public class RotateObject : MonoBehaviour
         if (objActions != null && objActions.isRotated == true) 
         {
             rotation = speed * rotation;
-			transform.Rotate(Vector3.up * -1, rotation.x, Space.World); // -1 to invert rotation
+            // -1 to invert rotation
+			transform.Rotate(Vector3.up * -1, rotation.x, Space.World);
         }
     }
 }

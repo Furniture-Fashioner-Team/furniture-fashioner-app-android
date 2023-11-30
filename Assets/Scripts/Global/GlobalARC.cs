@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+    This script defines global-level variables used in the 'ARCamera' related scripts.
+*/
 class GlobalARC
 {
     public static Vector2 iconSize;
@@ -13,7 +15,3 @@ class GlobalARC
     public static Dictionary<int, GameObject> aRObjDict = new();
     public static int? aRObjKey;
 }
-
-/*
-    This script defines global-level variables used in the 'ARCamera' related scripts.
-*/
