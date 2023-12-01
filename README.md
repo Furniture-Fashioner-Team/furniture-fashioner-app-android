@@ -9,7 +9,7 @@ We are utilising some Unity Asset Store assets for the completion of this projec
 If you are interested in trying the application, you can download the latest .apk file from the link https://developer.cloud.unity3d.com/share/share.html?shareId=oswmHWtmW1TtVKIrIrNiDav4CH1xo6W7PDsbow1O4nw.
 You can also find the latest downloadable version in the **Builds folder.** You can install it by copying the .apk file to any folder in your device and then opening it with your phone. You may need to change your phone's settings to allow the installation.
 
-If you are cloning the project, be sure to change the build settings to 'Android', since by default it's 'Windows, Mac, Linux'. From Edit > Project Settings > Editor you also need to change the device to 'Any Android Device'. Based on your device or software version you might need to change some other settings too, but for most devices the application should work with these changes.
+If you are cloning the project, be sure to change the build settings to 'Android', since by default it's 'Windows, Mac, Linux'. From Edit > Project Settings > Editor you also need to change the 'Device' setting to 'Any Android Device'. Based on your device or software version you might need to change some other settings too, but for most devices the application should work with these changes.
 
 ## Development Diary
 For **Sprint 1** the plan was to have a working camera view with rudimental objects, such as a cube or a triangle, and to be able to move, rotate and scale the object. We managed to implement the camera view and created working scripts for object rotation, as well as size manipulation.
