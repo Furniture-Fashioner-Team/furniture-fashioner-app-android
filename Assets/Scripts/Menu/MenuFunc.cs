@@ -4,13 +4,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+/*
+    The MenuFunc class of this script contains helper methods used by the Menu class
+    of the Menu script. ButtonSettings programmatically sets the size and font size
+    of the toCamera button. ScrollViewSettings programmatically sets the size and font size
+    of the scrollView and scrollViewContent components. GetVector2 returns the desired
+    2-dimensional vector. GetSprImg returns the prefab component to which a specific item's
+    image sprite has been added. AddEventTrigger adds an event listener to the cloned
+    image-containing prefab component, which allows modification of the GlobalMenu.furnitureKey
+    variable's value and, on the other hand, the transparency of the 'clicked' menu image,
+    so that the user knows which item is selected. The remaining methods are helper methods
+    for AddEventTrigger.
+*/
 class MenuFunc
 {
-    public static void ScrollViewSettings(RectTransform rT, RectTransform rTCont)
+    public static void ScrollViewSettings(RectTransform rT, RectTransform rTsB, RectTransform rTCont)
     {
         rT.sizeDelta = GlobalMenu.scrollViewSize;
+        rTsB.sizeDelta = GlobalMenu.scrollBarSize;
         rT.anchoredPosition = new Vector2(0, Global.dim[1] * 0.05f);
+        rTsB.anchoredPosition = new Vector2(-Global.dim[0] * 0.01f, 0);
         rTCont.sizeDelta = GetVector2(1.1f, GlobalMenu.furnitureCount);
     }
     public static void ButtonSettings(Button b)
@@ -23,7 +36,9 @@ class MenuFunc
     }
     public static Vector2 GetVector2(float mod, int n)
     {
-        return new Vector2(0, GlobalMenu.spriteImageSize.y * mod * n);
+        Vector2 v = new Vector2(0, GlobalMenu.spriteImageSize.y * mod * n);
+        v.x = mod == 0.55f ? -Global.dim[0] * 0.01f : 0;
+        return v;
     }
     public static GameObject GetSprImg(Vector2 place, GameObject prefab, Sprite spr)
     {
@@ -71,16 +86,3 @@ class MenuFunc
         img.color = col;
     }
 }
-
-/*
-    The MenuFunc class of this script contains helper methods used by the Menu class
-    of the Menu script. ButtonSettings programmatically sets the size and font size
-    of the toCamera button. ScrollViewSettings programmatically sets the size and font size
-    of the scrollView and scrollViewContent components. GetVector2 returns the desired
-    2-dimensional vector. GetSprImg returns the prefab component to which a specific item's
-    image sprite has been added. AddEventTrigger adds an event listener to the cloned
-    image-containing prefab component, which allows modification of the GlobalMenu.furnitureKey
-    variable's value and, on the other hand, the transparency of the 'clicked' menu image,
-    so that the user knows which item is selected. The remaining methods are helper methods
-    for AddEventTrigger.
-*/
