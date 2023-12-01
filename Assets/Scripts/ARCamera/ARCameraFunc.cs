@@ -5,7 +5,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/*
+    The ARCameraFunc class of this script contains helper functions used by the ARCamera class
+    within the ARCamera script. The MenuIconSettings, TrashCanSettings, and DuplicateSettings
+    functions define the properties of corresponding augmented reality camera view UI components,
+    and all of the aforementioned functions utilize the UICompSizeAndPlace function, which determines
+    the size and position of a specific component. The NewInst function is a helper function for the
+    NewObject function, used to add a desired new item instance.
+*/
 class ARCameraFunc : MonoBehaviour
 {
     public static void MenuIconSettings(GameObject obj)
