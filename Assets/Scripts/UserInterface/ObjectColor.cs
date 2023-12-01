@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
-// For testing and ui feedback: changes the object's color according to performed action
+/* 
+    For UI feedback on current object action: changes the object's color according to performed action.
+*/
 public class ObjectColor : MonoBehaviour
 {
-    // ObjectActions component reference of a certain object
     private ObjectActions objActions;
     // Store all materials of the object
     private List<Material> materials;
     // Store the original colors
     private Dictionary<int, Color> originalColorsDict = new();
-    // a nullable color indicator variable
+    // A nullable color indicator variable
     private Color? indicator;
 
     private void Start()

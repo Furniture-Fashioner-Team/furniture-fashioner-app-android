@@ -8,12 +8,12 @@ public class MoveObject : MonoBehaviour
 {
     private ObjectActions objActions;
     private float posY;
-    // the offset between the object's original place and destination
+    // The offset between the object's original place and destination
     private Vector3 offset = Vector3.zero;
     
-    /*  turn screen touch coordinates (xy) to world coordinates (xyz)
-        screen y is converted to world z, and world y is static
-        touch at bottom of screen: z = 0m, top of screen: z = 3.0m
+    /*  Turns screen touch coordinates (xy) to world coordinates (xyz).
+        Screen y is converted to world z, and world y is static.
+        Touch at bottom of screen: z = 0m, top of screen: z = 3.0m
     */
     private Vector3 WorldPosition()
     { 
@@ -35,15 +35,15 @@ public class MoveObject : MonoBehaviour
         {
             if (offset == Vector3.zero) 
             {
-                // calculate offset
+                // Calculate offset
                 offset = transform.position - WorldPosition();
             }
-            // move object
+            // Move object
             transform.position = WorldPosition() + offset;
         } 
         else 
         {
-            // reset offset
+            // Reset offset
             offset = Vector3.zero;
         }
     }

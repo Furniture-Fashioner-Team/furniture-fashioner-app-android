@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+    This script handles rotating the object around y axis.
+*/
 public class RotateObject : MonoBehaviour
 {
-    // reference for ObjectActions component
     private ObjectActions objActions;
-    // rotation speed
+    // Rotation speed
     private float speed = 0.3f;
     
     private void Start() 

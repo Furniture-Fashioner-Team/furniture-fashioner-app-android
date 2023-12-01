@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    For adjusting a furniture object's scale.
+*/
 public class ResizeObject : MonoBehaviour
 {
     private Transform tr;

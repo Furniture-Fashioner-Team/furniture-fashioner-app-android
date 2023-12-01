@@ -20,18 +20,16 @@ public class AnchorObject : MonoBehaviour
 
     void Update()
     {
-        // object is not moved and does not have an anchor component -> create anchor
+        // Object is not moved and does not have an anchor component -> create anchor
         if (!objectActions.isDragged && !gameObject.TryGetComponent<ARAnchor>(out anchor))
         {
             gameObject.AddComponent<ARAnchor>();
-            Debug.Log("anchor added");
         }
 
-        // object is moved and has an anchor component -> remove anchor
+        // Object is moved and has an anchor component -> remove anchor
         if (objectActions.isDragged && gameObject.TryGetComponent<ARAnchor>(out anchor)) 
         {
             Destroy(GetComponent<ARAnchor>());
-            Debug.Log("anchor removed");
         }
     }
 }

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-// manages the touch input actions to move and rotate an object and open object's tap menu
+/*
+    Manages the screen touch input actions to move and rotate an object and open object's tap menu.
+*/
 public class ObjectActions : MonoBehaviour
 {
-    // input actions
+    // Input actions
     private InputAction screenPosition;
     private InputAction axis;
     private InputAction press;
@@ -20,7 +21,6 @@ public class ObjectActions : MonoBehaviour
     public bool isDragged = false;
     public bool isRotated = false;
 
-    // setup tasks
     private void Awake()
     {
         screenPosition = new InputAction(type: InputActionType.Value, binding: "<Touchscreen>/position");
@@ -29,18 +29,18 @@ public class ObjectActions : MonoBehaviour
         tap = new InputAction(type: InputActionType.Button, binding: "<Touchscreen>/primaryTouch/tap", interactions: "tap");
         doublePress = new InputAction(type: InputActionType.Button, binding: "<Touchscreen>/touch1/press");
 
-        // touch position
+        // Touch position
         screenPosition.performed += context => currentScreenPosition = context.ReadValue<Vector2>();
-        // axis
+        // Axis
         axis.performed += context => rotation = context.ReadValue<Vector2>();
-        // tap: activates an object-specific menu, deactivates when tapped anywhere else
+        // Tap: activates an object-specific menu, deactivates when tapped anywhere else
         tap.performed += _ => openMenu = isActive();
-        // press until released: activates dragging
+        // Press until released: activates dragging
         press.performed += _ =>
         {
             if (isActive())
             {
-                // logic for setting main camera's audio source's clip to select.mp3 before playing it
+                // Logic for setting main camera's audio source's clip to select.mp3 before playing it
                 AudioClip selectAudioClip = Resources.Load<AudioClip>("Sounds/select");
                 AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
                 audioSource.clip = selectAudioClip;
@@ -64,6 +64,7 @@ public class ObjectActions : MonoBehaviour
         };
         doublePress.canceled += _ => isRotated = false;
     }
+
     private void Start()
     {
         screenPosition.Enable();
@@ -72,29 +73,28 @@ public class ObjectActions : MonoBehaviour
         tap.Enable();
         doublePress.Enable();
     }
+
+    /*  Raycast: if the ray hits the object this script is attached to, the GlobalARC.aRObjKey 
+        value is set to determine which item in the scene is selected. Then the boolean value is
+        returned, so that the other scripts know if their parent object is selected.
+    */
     public bool isActive()
     {
         Ray ray = Camera.main.ScreenPointToRay(currentScreenPosition);
-        // a ray is created
         Physics.Raycast(ray, out RaycastHit hit);
-        // a ray is casted
         bool active = hit.transform == transform;
-        // does the ray hit the object?
         if (active)
         {
             GlobalARC.aRObjKey = gameObject.GetInstanceID();
         }
-        /*
-            if the ray hits the object this script is attached to, the GlobalARC.aRObjKey value is
-            set so that we know which item in the scene is selected, and the boolean value is
-            returned, so that the other scripts know if their parent object is selected
-        */
         return active;
     }
+
     private void ResetOpenMenuValues()
     {
         FindObjectsOfType<ObjectActions>().ToList().ForEach(comp => comp.openMenu = false);
     }
+
     private void OnDestroy()
     {
         screenPosition.Disable();
