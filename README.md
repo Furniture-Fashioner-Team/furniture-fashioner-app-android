@@ -49,4 +49,11 @@ Our focus was on developing surface recognition and identification + user interf
 We worked towards solidifying our communication skills, to keep track of working progress more effectively. In regards to the development of the app, we were focusing on developing more nuanced ways to navigate the application as well as manipulate objects (deletion/duplication). We were also intending to further develop plane detection as well as object anchoring, but did not quite get them ready for the sprint review.
 
 ### Sprint 4
-We got the plane detection and object initialization working, and we also changed the object moving so that it only moves along detected surfaces. Additionally, we incorporated sound effects in our app, for object selection, duplication and deletion. We investigated the possibility to implement a screenshot/camera functionality to take a picture of the view, but it proved too time-consuming, so we left it out. For the rest of the sprint, we used our time to finalize our app and to make sure everything works as intended. 
+We got the plane detection and object initialization working, and we also changed the object moving so that it only moves along detected surfaces. Additionally, we incorporated sound effects in our app, for object selection, duplication and deletion. We investigated the possibility to implement a screenshot/camera functionality to take a picture of the view, but it proved too time-consuming, so we left it out. For the rest of the sprint, we used our time to finalize our app and to make sure everything works as intended.
+
+## Developers
+* [Teemu Asikainen](https://github.com/hhteemu)<br>
+* [Charlotta Bergström](https://github.com/charlbergs)<br>
+* [Jussi Latikka](https://github.com/JJLatikka)<br>
+* [Joonas Montonen](https://github.com/F0rsu)<br>
+* [Aapo Pessa](https://github.com/Tuhkamo)
