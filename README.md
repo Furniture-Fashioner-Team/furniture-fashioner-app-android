@@ -54,6 +54,6 @@ We got the plane detection and object initialization working, and we also change
 ## Developers
 * [Teemu Asikainen](https://github.com/hhteemu)<br>
 * [Charlotta Bergström](https://github.com/charlbergs)<br>
-* [Jussi Latikka](https://github.com/JJLatikka)<br>
+* [Jussi Latikka](https://github.com/KaarloVenesaari)<br>
 * [Joonas Montonen](https://github.com/F0rsu)<br>
 * [Aapo Pessa](https://github.com/Tuhkamo)
